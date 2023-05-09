@@ -15,9 +15,9 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/logs-list', [HomeController::class, 'logs_list'])->name('log.index');
+    Route::resource('/karyawan', KaryawanController::class);
 });
 
-Route::resource('/karyawan', KaryawanController::class);
 
 Route::middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('/users/grid', [UserController::class, 'grid'])->name('users.grid');

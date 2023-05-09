@@ -2,35 +2,35 @@
 	"use strict";
 	var t, e, a, s, n = localStorage.getItem("language"),
 		o = "en";
-		var urldef = "http://127.0.0.1:8000/";
+		var urldef = "http://best-corporation.test/";
 
 	function l(e) {
 		document.getElementsByClassName("header-lang-img").forEach(function(t) {
 			if (t) {
 				switch (e) {
 					case "eng":
-						t.src = "http://127.0.0.1:8000/assets/images/flags/us.jpg";
+						t.src = "http://best-corporation.test/assets/images/flags/us.jpg";
 						break;
 					case "sp":
-						t.src = "http://127.0.0.1:8000/assets/images/flags/spain.jpg";
+						t.src = "http://best-corporation.test/assets/images/flags/spain.jpg";
 						break;
 					case "gr":
-						t.src = "http://127.0.0.1:8000/assets/images/flags/germany.jpg";
+						t.src = "http://best-corporation.test/assets/images/flags/germany.jpg";
 						break;
 					case "it":
-						t.src = "http://127.0.0.1:8000/assets/images/flags/italy.jpg";
+						t.src = "http://best-corporation.test/assets/images/flags/italy.jpg";
 						break;
 					case "ru":
-						t.src = "http://127.0.0.1:8000/assets/images/flags/russia.jpg";
+						t.src = "http://best-corporation.test/assets/images/flags/russia.jpg";
 						break;
 					default:
-						t.src = "http://127.0.0.1:8000/assets/images/flags/us.jpg"
+						t.src = "http://best-corporation.test/assets/images/flags/us.jpg"
 				}
 				localStorage.setItem("language", e), n = localStorage.getItem("language"),
 					function() {
 						null == n && l(o);
 						var t = new XMLHttpRequest;
-						t.open("GET", "http://127.0.0.1:8000/assets/lang/" + n + ".json"), t.onreadystatechange = function() {
+						t.open("GET", "http://best-corporation.test/assets/lang/" + n + ".json"), t.onreadystatechange = function() {
 							var a;
 							4 === this.readyState && 200 === this.status && (a = JSON.parse(this.responseText), Object.keys(a).forEach(function(e) {
 								document.querySelectorAll("[data-key='" + e + "']").forEach(function(t) {
@@ -78,7 +78,7 @@
 
 	function u() {
 		var t, e, a;
-		eva.replace(), window.sessionStorage && ((t = sessionStorage.getItem("is_visited")) ? null !== (e = document.querySelector("#" + t)) && (e.checked = !0, a = t, 1 == document.getElementById("layout-direction-ltr").checked && "layout-direction-ltr" === a ? (document.getElementsByTagName("html")[0].removeAttribute("dir"), document.getElementById("layout-direction-rtl").checked = !1, document.getElementById("bootstrap-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/bootstrap.min.css"), document.getElementById("app-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/app.min.css"), sessionStorage.setItem("is_visited", "layout-direction-ltr")) : 1 == document.getElementById("layout-direction-rtl").checked && "layout-direction-rtl" === a && (document.getElementById("layout-direction-ltr").checked = !1, document.getElementById("bootstrap-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/bootstrap-rtl.min.css"), document.getElementById("app-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/app-rtl.min.css"), document.getElementsByTagName("html")[0].setAttribute("dir", "rtl"), sessionStorage.setItem("is_visited", "layout-direction-rtl"))) : sessionStorage.setItem("is_visited", "layout-direction-ltr"));
+		eva.replace(), window.sessionStorage && ((t = sessionStorage.getItem("is_visited")) ? null !== (e = document.querySelector("#" + t)) && (e.checked = !0, a = t, 1 == document.getElementById("layout-direction-ltr").checked && "layout-direction-ltr" === a ? (document.getElementsByTagName("html")[0].removeAttribute("dir"), document.getElementById("layout-direction-rtl").checked = !1, document.getElementById("bootstrap-style").setAttribute("href", "http://best-corporation.test/assets/css/bootstrap.min.css"), document.getElementById("app-style").setAttribute("href", "http://best-corporation.test/assets/css/app.min.css"), sessionStorage.setItem("is_visited", "layout-direction-ltr")) : 1 == document.getElementById("layout-direction-rtl").checked && "layout-direction-rtl" === a && (document.getElementById("layout-direction-ltr").checked = !1, document.getElementById("bootstrap-style").setAttribute("href", "http://best-corporation.test/assets/css/bootstrap-rtl.min.css"), document.getElementById("app-style").setAttribute("href", "http://best-corporation.test/assets/css/app-rtl.min.css"), document.getElementsByTagName("html")[0].setAttribute("dir", "rtl"), sessionStorage.setItem("is_visited", "layout-direction-rtl"))) : sessionStorage.setItem("is_visited", "layout-direction-ltr"));
 		var s = document.getElementsByTagName("body")[0];
 		s.hasAttribute("data-layout") && "horizontal" == s.getAttribute("data-layout") ? (m("layout-horizontal"), document.getElementById("sidebar-setting").style.display = "none", document.getElementsByClassName("vertical-menu")[0].style.display = "none", document.getElementsByClassName("ishorizontal-topbar")[0].style.display = "block", document.getElementsByClassName("isvertical-topbar")[0].style.display = "none", document.getElementsByClassName("topnav")[0].style.display = "block", document.getElementsByClassName("footer")[0].style.display = "block", "light" == s.hasAttribute("data-topbar") ? (m("topbar-color-light"), document.body.setAttribute("data-topbar", "light")) : "dark" == s.hasAttribute("data-topbar") && (m("topbar-color-dark"), document.body.setAttribute("data-topbar", "dark")), document.body.removeAttribute("data-sidebar")) : (document.getElementsByClassName("isvertical-topbar")[0].style.display = "block", m("layout-vertical"), document.getElementsByClassName("topnav")[0].style.display = "none", document.getElementsByClassName("ishorizontal-topbar")[0].style.display = "none", document.getElementsByClassName("footer")[0].style.display = "none")
 	}
@@ -153,7 +153,7 @@
 			})
 		}), document.querySelectorAll("input[name='layout-direction']").forEach(function(t) {
 			t.addEventListener("change", function(t) {
-				t && t.target && t.target.value && ("ltr" == t.target.value ? (document.getElementsByTagName("html")[0].removeAttribute("dir"), document.getElementById("bootstrap-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/bootstrap.min.css"), document.getElementById("app-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/app.min.css"), sessionStorage.setItem("is_visited", "layout-direction-ltr")) : (document.getElementById("bootstrap-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/bootstrap-rtl.min.css"), document.getElementById("app-style").setAttribute("href", "http://127.0.0.1:8000/assets/css/app-rtl.min.css"), document.getElementsByTagName("html")[0].setAttribute("dir", "rtl"), sessionStorage.setItem("is_visited", "layout-direction-rtl")))
+				t && t.target && t.target.value && ("ltr" == t.target.value ? (document.getElementsByTagName("html")[0].removeAttribute("dir"), document.getElementById("bootstrap-style").setAttribute("href", "http://best-corporation.test/assets/css/bootstrap.min.css"), document.getElementById("app-style").setAttribute("href", "http://best-corporation.test/assets/css/app.min.css"), sessionStorage.setItem("is_visited", "layout-direction-ltr")) : (document.getElementById("bootstrap-style").setAttribute("href", "http://best-corporation.test/assets/css/bootstrap-rtl.min.css"), document.getElementById("app-style").setAttribute("href", "http://best-corporation.test/assets/css/app-rtl.min.css"), document.getElementsByTagName("html")[0].setAttribute("dir", "rtl"), sessionStorage.setItem("is_visited", "layout-direction-rtl")))
 			})
 		}), i(), (s = document.getElementById("checkAll")) && (s.onclick = function() {
 			for (var t = document.querySelectorAll('.table-check input[type="checkbox"]'), e = 0; e < t.length; e++) t[e].checked = this.checked

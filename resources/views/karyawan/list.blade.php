@@ -4,6 +4,7 @@
 @endsection
 
 @section('content')
+
 <div class="row align-items-center">
    <div class="col-md-6">
        <div class="mb-3">

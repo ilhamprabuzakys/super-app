@@ -31,8 +31,8 @@
                      </div>
                      <div class="col-md-4">
                         <label for="umur" class="form-label">Umur</label>
-                        <input class="form-control" type="text" value="{{ old('umur', $karyawan->umur) }}" name="umur"
-                           id="umur">
+                        <input class="form-control" type="number" value="{{ old('umur', $karyawan->umur) }}" name="umur"
+                           id="umur" max="120" min="5">
                         @error('umur')
                            <div class="invalid-feedback">
                               {{ $message }}

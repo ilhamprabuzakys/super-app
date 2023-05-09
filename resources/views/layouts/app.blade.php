@@ -13,11 +13,11 @@
    {{-- Box Icons Css --}}
    <link rel="stylesheet" href="{{ asset('assets/libs/box-icons/css/boxicons.min.css') }}">
    <!-- Bootstrap Css -->
-   <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
    <!-- Icons Css -->
    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
    <!-- App Css-->
-   <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+   <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
    @stack('style')
 
 </head>
@@ -85,27 +85,7 @@
       <div class="main-content">
          <div class="page-content">
             <div class="container-fluid">
-               @if (session('fails'))
-                  <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
-                     <i class="mdi mdi-alert-triangle-outline me-2"></i>
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                     {!! session('fails') !!}
-                  </div>
-               @elseif(session('success'))
-                  <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
-                     <i class="mdi mdi-alert-check-all me-2"></i>
-
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                     {!! session('success') !!}
-                  </div>
-               @elseif(session('message'))
-                  <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
-                     <i class="mdi mdi-alert-check-all me-2"></i>
-
-                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                     {!! session('message') !!}
-                  </div>
-               @endif
+               @include('components.session')
 
                @yield('content')
             </div>

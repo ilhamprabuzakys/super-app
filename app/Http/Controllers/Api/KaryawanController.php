@@ -40,7 +40,7 @@ class KaryawanController extends Controller
         
         return response()->json([
             'data' => new KaryawanResource($karyawan),
-            'message' => "Karyawan $karyawan->nama berhasil ditambahkan.",
+            'message' => "Karyawan dengan nama: $karyawan->nama berhasil ditambahkan.",
             'success' => true
         ]);
 
@@ -53,12 +53,12 @@ class KaryawanController extends Controller
         if($karyawan) {
             return response()->json([
                 'data' => new KaryawanResource($karyawan),
-                'message' => 'Data ditemukan',
+                'message' => "Data karyawan dengan id $karyawan->id berhasil ditemukan.",
                 'success' => true
             ]);
         } else {
             return response()->json([
-                'message' => 'Data tidak ditemukan',
+                'message' => 'Data tidak ditemukan.',
                 'success' => false
             ], 404);
         }
@@ -81,9 +81,6 @@ class KaryawanController extends Controller
         $validatedData = $validator->validated();
 
         $karyawan->update($validatedData);
-        return response()->json([
-            'data' => $karyawan
-        ]);
 
         return response()->json([
             'data' => new KaryawanResource($karyawan),
@@ -94,13 +91,13 @@ class KaryawanController extends Controller
 
     public function destroy(Karyawan $karyawan)
     {
-        $oldTitle = $karyawan->name;
+        $oldTitle = $karyawan->nama;
         $karyawan->delete();
 
         // return response()->json(null, 204);
         return response()->json([
             'data' => [],
-            'message' => "Karyawan $oldTitle telah dihapus",
+            'message' => "Karyawan dengan nama: $oldTitle telah dihapus.",
             'success' => true
         ]);
     }

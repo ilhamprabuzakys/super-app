@@ -3,15 +3,15 @@
 @endpush --}}
 @extends('layouts.app')
 @section('title')
-   <h4 class="page-title">Create Karyawan</h4>
+   <h4 class="page-title">Tambah Data Karyawan</h4>
 @endsection
 @section('content')
    <div class="row">
       <div class="col-12">
          <div class="card">
-            {{-- <div class="card-header">
-                   <h4 class="card-title">Input User Data</h4>
-               </div> --}}
+            <div class="card-header">
+                   <h4 class="card-title">Input Data Karyawan</h4>
+               </div>
             <div class="card-body">
 
                <p class="card-title-desc">Tambahkan data karyawan untul menggunakan <code>layanan kami</code>
@@ -32,8 +32,8 @@
                      </div>
                      <div class="col-md-4">
                         <label for="umur" class="form-label">Umur</label>
-                        <input class="form-control" type="text" value="{{ old('umur') }}" name="umur"
-                           id="umur">
+                        <input class="form-control" type="number" value="{{ old('umur') }}" name="umur"
+                           id="umur" max="120" min="5">
                         @error('umur')
                            <div class="invalid-feedback">
                               {{ $message }}

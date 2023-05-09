@@ -66,26 +66,15 @@ class KaryawanController extends Controller
             'description' => "Karyawan data $karyawan->nama was successfully stored."
         ]);
 
-        return redirect()->route('karyawan.index')->with('message', "Data Karyawan <b>$karyawan->name</b> telah berhasil <b>ditambahkan!</b>");
+        return redirect()->route('karyawan.index')->with('message', "Data Karyawan <b>$karyawan->nama</b> telah berhasil <b>ditambahkan!</b>");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Karyawan  $karyawan
-     * @return \Illuminate\Http\Response
-     */
     public function show(Karyawan $karyawan)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Karyawan  $karyawan
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(Karyawan $karyawan)
     {
         return view('karyawan.edit', [
@@ -93,13 +82,6 @@ class KaryawanController extends Controller
         ], compact('karyawan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateKaryawanRequest  $request
-     * @param  \App\Models\Karyawan  $karyawan
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Karyawan $karyawan)
     {
         $validator = Validator::make($request->all(), [
@@ -125,15 +107,9 @@ class KaryawanController extends Controller
             'description' => "Karyawan data $karyawan->nama was successfully updated."
         ]);
 
-        return redirect()->route('karyawan.index')->with('message', "Data Karyawan <b>$karyawan->name</b> telah berhasil <b>diupdate!</b>");
+        return redirect()->route('karyawan.index')->with('message', "Data Karyawan <b>$karyawan->nama</b> telah berhasil <b>diupdate!</b>");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Karyawan  $karyawan
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Karyawan $karyawan)
     {
         $oldTitle = $karyawan->nama;

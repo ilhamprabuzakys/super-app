@@ -2,26 +2,9 @@
 @section('auth-content')
    <div class="text-center">
       <h5 class="mb-0">Welcome Back !</h5>
-      <p class="text-muted mt-2">Sign in to continue to Borex.</p>
+      <p class="text-muted mt-2">Sign in to continue to BestCorporation.</p>
    </div>
-   <div class="my-2">
-      @if (session('fails'))
-         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            {!! session('fails') !!}
-         </div>
-      @elseif(session('success'))
-         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            {!! session('success') !!}
-         </div>
-      @elseif(session('status'))
-         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            {!! session('status') !!}
-         </div>
-      @endif
-   </div>
+   @include('auth.session')
    <form class="mt-4 pt-2" action="{{ route('login.authenticate') }}" method="post">
       @csrf
       <div class="form-floating form-floating-custom mb-4">
