@@ -136,7 +136,7 @@ class KaryawanController extends Controller
      */
     public function destroy(Karyawan $karyawan)
     {
-        $oldTitle = $karyawan->name;
+        $oldTitle = $karyawan->nama;
         $karyawan->delete();
 
         return redirect()->route('karyawan.index')->with('message', "Data karyawan <b>$oldTitle</b> telah berhasil <b>dihapus!</b>");

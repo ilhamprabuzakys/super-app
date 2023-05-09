@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Karyawan;
 use App\Models\Kecamatan;
 use App\Models\Kota;
 use App\Models\Log;
@@ -16,17 +17,12 @@ class HomeController extends Controller
     {
         $users = User::all();
         $usercount = User::count();
-        $kotacount = Kota::count();
-        $kecamatancount = Kecamatan::count();
-        $siswacount = Siswa::count();
+        $karyawancount = Karyawan::count();
 
         return view('home.index', [
             'title' => 'Home',
             'users' => $users,
-            'usercount' => $usercount,
-            'kotacount' => $kotacount,
-            'kecamatancount' => $kecamatancount,
-            'siswacount' => $siswacount,
+            'karyawancount' => $karyawancount,
         ]);
     }
 
