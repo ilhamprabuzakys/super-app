@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Input Biodata</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h3 class="text-center mb-4">Form Input Biodata</h3>
+    <form id="myForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nama Lengkap</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Jenis Kelamin</label>
+        <div class="form-check">
+          <input type="radio" id="male" name="gender" value="Laki-laki" class="form-check-input" required>
+          <label for="male" class="form-check-label">Laki-laki</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="female" name="gender" value="Perempuan" class="form-check-input" required>
+          <label for="female" class="form-check-label">Perempuan</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Hobi</label>
+        <div class="form-check">
+          <input type="checkbox" id="hobi1" name="hobi" value="Baca buku" class="form-check-input">
+          <label for="hobi1" class="form-check-label">Baca buku</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="hobi2" name="hobi" value="Olahraga" class="form-check-input">
+          <label for="hobi2" class="form-check-label">Olahraga</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="hobi3" name="hobi" value="Main game" class="form-check-input">
+          <label for="hobi3" class="form-check-label">Main game</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="hobi4" name="hobi" value="Hiking" class="form-check-input">
+          <label for="hobi4" class="form-check-label">Hiking</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="script.js"></script>
+</body>
+</html>
