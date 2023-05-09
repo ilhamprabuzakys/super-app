@@ -9,6 +9,8 @@
 
 ## SOAL 1 dan 2 ada di folder SOAL-ILHAM
 
+# Jika Bapak mau mereview dan menjalankan aplikasi saya di local maka bapak ikuti langkah berikut :
+
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
