@@ -1,0 +1,18 @@
+# Sebenarnya sudah tercantum di UserSeeder, namun untuk pengingat disini saya tuliskan daftarnya.
+Role: Admin
+1. nama     : Admin
+   email    : admin@gmail.com
+   username : admin
+   password : admin
+
+Role: Moderator
+1. nama     : Moderator
+   email    : moderator@gmail.com
+   username : moderator
+   password : moderator
+
+Role: User
+1. nama     : User
+   email    : user@gmail.com
+   username : user
+   password : user

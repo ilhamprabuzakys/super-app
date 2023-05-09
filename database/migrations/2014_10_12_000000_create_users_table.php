@@ -20,10 +20,6 @@ return new class extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('password');
             $table->enum('role', ['admin', 'user', 'moderator'])->default('user');
-            $table->foreignId('kota_id');            
-            $table->foreignId('kecamatan_id');
-            $table->text('alamat')->nullable();
-            
             // $table->timestamp('email_verified_at')->nullable();
             $table->datetime('last_login_at')->nullable();
             $table->string('last_login_ip')->nullable();

@@ -21,8 +21,6 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => \bcrypt('admin'),
             'role' => 'admin',
-            'kota_id' => \random_int(1,3),
-            'kecamatan_id' => \random_int(1,8),
         ]);
 
         User::create([
@@ -31,8 +29,6 @@ class UserSeeder extends Seeder
             'username' => 'moderator',
             'password' => \bcrypt('moderator'),
             'role' => 'moderator',
-            'kota_id' => \random_int(1,3),
-            'kecamatan_id' => \random_int(1,8),
         ]);
 
         User::create([
@@ -41,8 +37,6 @@ class UserSeeder extends Seeder
             'username' => 'ilhamprabuzakys',
             'password' => \bcrypt('password'),
             'role' => 'user',
-            'kota_id' => \random_int(1,3),
-            'kecamatan_id' => \random_int(1,8),
         ]);
     }
 }

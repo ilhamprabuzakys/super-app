@@ -21,16 +21,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function kota()
-    {
-        return $this->belongsTo(Kota::class);
-    }
-
-    public function kecamatan()
-    {
-        return $this->belongsTo(Kecamatan::class);
-    }
-
     /* public function loggings()
     {
         return $this->belongsToMany(Log::class, 'logging_users', 'user_id', 'log_id');
