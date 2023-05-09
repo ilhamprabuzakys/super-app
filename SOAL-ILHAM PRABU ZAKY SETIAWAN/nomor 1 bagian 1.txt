@@ -1,1 +1,9 @@
-1. Outputnya adalah 6
+Untuk soal 
+y:= 3;
+x:= 0;
+for i:=0 to y-1 do
+begin x:=x+2 * i;
+end;
+Writeln(x);
+
+1. Berapakah output dari program di atas? Jawaban ku Outputnya adalah 6
