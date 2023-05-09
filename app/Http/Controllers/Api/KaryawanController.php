@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\KaryawanResource;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,7 +14,9 @@ class KaryawanController extends Controller
     {
         $karyawans = Karyawan::orderBy('updated_at', 'desc')->get();
         return response()->json([
-            'data' => $karyawans
+            'data' => KaryawanResource::collection($karyawans),
+            'message' => 'Fetch all karyawan',
+            'success' => true
         ]);
     }
 
@@ -28,8 +31,7 @@ class KaryawanController extends Controller
         ]);
 
         if ($validator->fails()) {
-            // dd($validator->errors());
-            return redirect()->back()->withErrors($validator)->withInput();
+            return response()->json($validator->errors(), 422);
         }
 
         $validatedData = $validator->validated();
@@ -37,15 +39,29 @@ class KaryawanController extends Controller
         $karyawan = Karyawan::create($validatedData);
         
         return response()->json([
-            'data' => $karyawan
-        ], 201);
+            'data' => new KaryawanResource($karyawan),
+            'message' => "Karyawan $karyawan->nama berhasil ditambahkan.",
+            'success' => true
+        ]);
+
+        // return new KaryawanResource(true, "Karyawan $karyawan->nama berhasil ditambahkan.", $karyawan);
+
     }
 
     public function show(Karyawan $karyawan)
     {
-        return response()->json([
-            'data' => $karyawan
-        ]);
+        if($karyawan) {
+            return response()->json([
+                'data' => new KaryawanResource($karyawan),
+                'message' => 'Data ditemukan',
+                'success' => true
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Data tidak ditemukan',
+                'success' => false
+            ], 404);
+        }
     }
 
     public function update(Request $request, Karyawan $karyawan)
@@ -68,6 +84,12 @@ class KaryawanController extends Controller
         return response()->json([
             'data' => $karyawan
         ]);
+
+        return response()->json([
+            'data' => new KaryawanResource($karyawan),
+            'message' => "Karyawan $karyawan->nama berhasil diupdate.",
+            'success' => true
+        ]);
     }
 
     public function destroy(Karyawan $karyawan)
@@ -75,6 +97,11 @@ class KaryawanController extends Controller
         $oldTitle = $karyawan->name;
         $karyawan->delete();
 
-        return response()->json(null, 204);
+        // return response()->json(null, 204);
+        return response()->json([
+            'data' => [],
+            'message' => "Karyawan $oldTitle telah dihapus",
+            'success' => true
+        ]);
     }
 }
