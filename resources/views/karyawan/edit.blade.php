@@ -45,14 +45,18 @@
                         <h5 class="font-size-14 mb-4">Jenis Kelamin</h5>
                         <div class="form-check mb-3">
                            <input class="form-check-input" type="radio" name="jenis_kelamin"
-                              id="jenis_kelamin" value="Pria" checked>
+                              id="jenis_kelamin" value="Pria" @if (old('jenis_kelamin', $karyawan->jenis_kelamin) == 'Pria')
+                              checked
+                              @endif>
                            <label class="form-check-label" for="jenis_kelamin">
                               Pria
                            </label>
                         </div>
                         <div class="form-check mb-3">
                            <input class="form-check-input" type="radio" name="jenis_kelamin"
-                              id="jenis_kelamin" value="Wanita">
+                              id="jenis_kelamin" value="Wanita"  @if (old('jenis_kelamin', $karyawan->jenis_kelamin) == 'Wanita')
+                              checked
+                              @endif>
                            <label class="form-check-label" for="jenis_kelamin">
                               Wanita
                            </label>
