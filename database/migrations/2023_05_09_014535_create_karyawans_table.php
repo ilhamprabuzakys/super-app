@@ -13,12 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('karyawans', function (Blueprint $table) {
+        Schema::create('karyawan', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
-            $table->int('umur');
+            $table->smallInteger('umur');
             $table->enum('jenis_kelamin', ['Pria', 'Wanita']);
             $table->string('alamat');
+            $table->foreignId('user_id');
+            $table->foreignId('kota_id');
+            $table->foreignId('kecamatan_id');
+            $table->foreignId('kelurahan_id')->nullable();
             $table->timestamps();
         });
     }

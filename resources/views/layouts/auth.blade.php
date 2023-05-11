@@ -9,7 +9,7 @@
    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
    <meta content="Themesbrand" name="author" />
    <!-- App favicon -->
-   <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+   <link rel="shortcut icon" href="{{ asset('icon.png') }}">
 
    {{-- Box Icons Css --}}
    <link rel="stylesheet" href="{{ asset('assets/libs/box-icons/css/boxicons.min.css') }}">
@@ -37,8 +37,8 @@
                                     <div class="d-flex flex-column h-100">
                                        <div class="mb-4 mb-md-5">
                                           <a href="{{ route('login') }}" class="d-block auth-logo">
-                                             <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="22" class="auth-logo-dark me-start">
-                                             <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="22" class="auth-logo-light me-start">
+                                             <img src="{{ asset('icon.png') }}" alt="" height="70" class="auth-logo-dark me-start">
+                                             <img src="{{ asset('icon.png') }}" alt="" height="70" class="auth-logo-light me-start">
                                           </a>
                                        </div>
                                        <div class="auth-content my-auto">

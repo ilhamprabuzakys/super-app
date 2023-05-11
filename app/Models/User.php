@@ -31,4 +31,11 @@ class User extends Authenticatable
         return $this->hasMany(Log::class);
     }
 
+    public function karyawan()
+    {
+        return $this->belongsTo(Karyawan::class);
+    }
+
+    
+
 }

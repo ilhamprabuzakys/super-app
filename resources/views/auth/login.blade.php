@@ -2,7 +2,7 @@
 @section('auth-content')
    <div class="text-center">
       <h5 class="mb-0">Welcome Back !</h5>
-      <p class="text-muted mt-2">Sign in to continue to BestCorporation.</p>
+      <p class="text-muted mt-2">Sign in to use our products.</p>
    </div>
    @include('auth.session')
    <form class="mt-4 pt-2" action="{{ route('login.authenticate') }}" method="post">

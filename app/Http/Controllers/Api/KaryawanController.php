@@ -15,7 +15,7 @@ class KaryawanController extends Controller
         $karyawans = Karyawan::orderBy('updated_at', 'desc')->get();
         return response()->json([
             'data' => KaryawanResource::collection($karyawans),
-            'message' => 'Fetch all karyawan',
+            'message' => 'Fetch all Data Karyawan',
             'success' => true
         ]);
     }
@@ -75,7 +75,12 @@ class KaryawanController extends Controller
 
         if ($validator->fails()) {
             // dd($validator->errors());
-            return redirect()->back()->withErrors($validator)->withInput();
+            // return redirect()->back()->withErrors($validator)->withInput();
+            return response()->json([
+                'data' => $validator->fails(),
+                'message' => "Something went wrong",
+                'success' => \false
+            ], 500);
         }
 
         $validatedData = $validator->validated();

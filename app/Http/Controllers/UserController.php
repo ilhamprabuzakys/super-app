@@ -31,13 +31,11 @@ class UserController extends Controller
 
     public function create()
     {
-        $kotas = Kota::orderBy('updated_at', 'desc')->get();
-        $kecamatans = Kecamatan::orderBy('updated_at', 'desc')->get();
         $roles = ['admin', 'moderator', 'user'];
 
         return view('users.create', [
-            'title' => 'Create User',
-        ], compact('kotas', 'kecamatans', 'roles'));
+            'title' => 'Tambah User',
+        ], compact('roles'));
     }
 
     public function store(Request $request)
@@ -47,10 +45,7 @@ class UserController extends Controller
             'firstname' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|confirmed',
-            'kota_id' => 'required',
             'role' => 'required',
-            'kecamatan_id' => 'required',
-            'alamat' => 'required|min:4',
         ], [
             'kota_id.required' => 'Field kota is required',
             'kecamatan_id.required' => 'Field kecamatan is required',

@@ -16,8 +16,15 @@ class KaryawanFactory extends Factory
      */
     public function definition()
     {
+        $users = resolve(UserFactory::class)->make();
+
         return [
-            //
+            'nama' => $users['name'],
+            'umur' => random_int(20,40),
+            'alamat' => fake()->address(),
+            'user_id' => $users->id,
+            'kota_id' => random_int(1,5),
+            'kecamatan_id' => random_int(1,5),
         ];
     }
 }

@@ -15,14 +15,22 @@
             </ul> --}}
         </li>
  
-        <li class="menu-title" data-key="t-applications">Applications</li>
- 
+        <li class="menu-title" data-key="t-applications">DATA</li>
+
+        <li class="{{ Request::is('karyawan*') ? 'mm-active' : '' }}">
+            <a href="{{ route('karyawan.index') }}">
+                <i class="icon nav-icon" data-eva="people-outline"></i>
+                <span class="menu-item" data-key="t-authentication">Karyawan</span>
+                <span class="badge rounded-pill badge-soft-primary">{{ \App\Models\Karyawan::count() }}</span>
+            </a>
+        </li>
+{{--  
         <li class="{{ Request::is('master*') ? 'mm-active' : '' }}">
             <a href="apps-calendar.html">
                 <i class="icon nav-icon" data-eva="calendar-outline"></i>
                 <span class="menu-item" data-key="t-calendar">Master Data</span>
             </a>
-        </li>
+        </li> --}}
  
         <li class="{{ Request::is('products*') ? 'mm-active' : '' }}">
             <a href="apps-file-manager.html">
@@ -31,32 +39,30 @@
             </a>
         </li>
  
-        <li class="{{ Request::is('ecommerce*') ? 'mm-active' : '' }}">
+        {{-- <li class="{{ Request::is('ecommerce*') ? 'mm-active' : '' }}">
             <a href="#">
                 <i class="icon nav-icon" data-eva="shopping-bag-outline"></i>
                 <span class="menu-item" data-key="t-ecommerce">Ecommerce</span>
                 <span class="badge rounded-pill badge-soft-danger" data-key="t-hot">Hot</span>
             </a>
+        </li> --}}
+        <li class="{{ Request::is('log*') ? 'mm-active' : '' }}">
+            <a href="{{ route('log.index') }}">
+                <i class="icon nav-icon" data-eva="checkmark-square-outline"></i>
+                <span class="menu-item" data-key="t-utility">Log</span>
+            </a>
         </li>
- 
  
        @can('admin')
        <li class="menu-title" data-key="t-pages">Admin</li>
  
-       <li class="{{ Request::is('karyawan*') ? 'mm-active' : '' }}">
-           <a href="{{ route('karyawan.index') }}">
-               <i class="icon nav-icon" data-eva="people-outline"></i>
-               <span class="menu-item" data-key="t-authentication">Karyawan</span>
-               <span class="badge rounded-pill badge-soft-primary">{{ \App\Models\Karyawan::count() }}</span>
-           </a>
-       </li>
-
-       <li class="{{ Request::is('log*') ? 'mm-active' : '' }}">
-           <a href="{{ route('log.index') }}">
-               <i class="icon nav-icon" data-eva="checkmark-square-outline"></i>
-               <span class="menu-item" data-key="t-utility">Log</span>
-           </a>
-       </li>
+       <li class="{{ Request::is('user*') ? 'mm-active' : '' }}">
+        <a href="{{ route('users.index') }}">
+            <i class="icon nav-icon" data-eva="people-outline"></i>
+            <span class="menu-item" data-key="t-authentication">Users</span>
+            <span class="badge rounded-pill badge-soft-primary">{{ \App\Models\User::count() }}</span>
+        </a>
+    </li>
        @endcan
     </ul>
  </div>

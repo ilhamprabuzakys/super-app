@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
 use App\Models\Log;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -56,8 +57,24 @@ class KaryawanController extends Controller
         }
 
         $validatedData = $validator->validated();
-
         $karyawan = Karyawan::create($validatedData);
+
+        Log::create([
+            'user_id' => auth()->user()->id,
+            'type' => 'success',
+            'action' => 'store',
+            'on' => 'Karyawan',
+            'description' => "Karyawan data $karyawan->nama was successfully stored."
+        ]);
+
+        User::create([
+            'name' => $karyawan->nama,
+            'email' => "$karyawan->id.karyawan@gmail.com",
+            'username' => "$karyawan->id.karyawan",
+            'password' => \bcrypt('password'),
+            'role' => 'user',
+        ]);
+
         Log::create([
             'user_id' => auth()->user()->id,
             'type' => 'success',

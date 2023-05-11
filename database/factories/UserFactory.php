@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Karyawan;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -10,23 +11,29 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+    
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
+
     public function definition()
     {
-        $email = fake()->unique()->safeEmail();
+        // $email = fake()->unique()->safeEmail();
+        // $jumlahKaryawan = Karyawan::count();
+        
+        
+        static $count = 3;
+        $email = sprintf('%d.%s@best-corporation.id', $count++, 'karyawan');
         $username = explode('@', $email)[0];
-
         return [
             'name' => fake()->name(),
             'email' => $email,
             'username' => $username,
-            // 'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => \bcrypt('password'), // password
             'remember_token' => Str::random(10),
+            // 'email_verified_at' => now(),
         ];
     }
 

@@ -8,7 +8,7 @@
    <meta content="Best Corporation App" name="description" />
    <meta content="Besto" name="ilhamprabuzakys" />
    <!-- App favicon -->
-   <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+   <link rel="shortcut icon" href="{{ asset('icon.png') }}">
 
    {{-- Box Icons Css --}}
    <link rel="stylesheet" href="{{ asset('assets/libs/box-icons/css/boxicons.min.css') }}">

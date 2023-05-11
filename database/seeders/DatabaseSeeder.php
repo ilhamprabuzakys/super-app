@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
+        $seeders = [
             UserSeeder::class,
-        ]);
+            KaryawanSeeder::class,
+            KotaSeeder::class,
+        ];
+        
+        foreach ($seeders as $seeder) {
+            if (class_exists($seeder)) {
+                $this->call($seeder);
+            }
+        }
 
-        // Insert dummy data
-
+        // \App\Models\User::factory(10)->create();
+        // \App\Models\Karyawan::factory(10)->create();
     }
 }
