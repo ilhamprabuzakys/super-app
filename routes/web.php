@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::get('/', [HomeController::class, 'index'])->name('index')->middleware('guest');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('home');
