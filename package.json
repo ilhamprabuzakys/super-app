@@ -12,6 +12,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@inertiajs/vue3": "^1.0.6"
+        "@inertiajs/vue3": "^1.0.6",
+        "isotope-layout": "^3.0.6"
     }
 }
