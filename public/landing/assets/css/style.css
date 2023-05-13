@@ -1626,11 +1626,12 @@ header.section-header > h1.h1-big {
 
 .recent-blog-posts .post-box .post-title {
   font-size: 24px;
-  color: #012970;
+  color: #5c5c5c;
   font-weight: 700;
   margin-bottom: 18px;
   position: relative;
   transition: 0.3s;
+  text-transform: capitalize;
 }
 
 .recent-blog-posts .post-box .readmore {
@@ -1639,6 +1640,12 @@ header.section-header > h1.h1-big {
   font-weight: 600;
   line-height: 1;
   transition: 0.3s;
+  color: #7f7f7f;
+}
+
+.recent-blog-posts .post-box .readmore:hover {
+  transition: 0.1s;
+  color: #0b3557;
 }
 
 .recent-blog-posts .post-box .readmore i {
@@ -1648,7 +1655,7 @@ header.section-header > h1.h1-big {
 }
 
 .recent-blog-posts .post-box:hover .post-title {
-  color: #4154f1;
+  color: #292929;
 }
 
 .recent-blog-posts .post-box:hover .post-img img {
@@ -2498,4 +2505,84 @@ section.contact div.container header.section-header h2.h2-contact {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+.text-rotate {
+  transform: rotate(-90deg);
+  font-weight: 600;
+}
+
+div.row.competency-sect div.col-lg-3 img {
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 35.29%, 0) 0%,
+    hsla(0, 0%, 34.53%, 0.034375) 16.36%,
+    hsla(0, 0%, 32.42%, 0.125) 33.34%,
+    hsla(0, 0%, 29.18%, 0.253125) 50.1%,
+    hsla(0, 0%, 24.96%, 0.4) 65.75%,
+    hsla(0, 0%, 19.85%, 0.546875) 79.43%,
+    hsla(0, 0%, 13.95%, 0.675) 90.28%,
+    hsla(0, 0%, 7.32%, 0.765625) 97.43%,
+    hsla(0, 0%, 0%, 0.8) 100%
+  );
+  /* object-fit: cover;
+  height: 100%; */
+}
+
+div.row.competency-sect div.col-lg-3 h3.text-over-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none; 
+  -webkit-text-stroke: 1px rgb(52, 52, 52);
+  /* -webkit-text-fill-color: black; Warna teks di dalam stroke (pilih warna yang sesuai) */
+  fill: white; /* Warna teks di dalam stroke (pilih warna yang sesuai) */
+  text-shadow: 0 6px 9px rgba(0, 0, 0, 0.3);
+
+}
+
+div.row.competency-sect div.col-lg-3 img {
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 35.29%, 0) 0%,
+    hsla(0, 0%, 34.53%, 0.034375) 16.36%,
+    hsla(0, 0%, 32.42%, 0.125) 33.34%,
+    hsla(0, 0%, 29.18%, 0.253125) 50.1%,
+    hsla(0, 0%, 24.96%, 0.4) 65.75%,
+    hsla(0, 0%, 19.85%, 0.546875) 79.43%,
+    hsla(0, 0%, 13.95%, 0.675) 90.28%,
+    hsla(0, 0%, 7.32%, 0.765625) 97.43%,
+    hsla(0, 0%, 0%, 0.8) 100%
+  );
+  object-fit: cover;
+  height: 100%;
+}
+
+/* .competency-sect .col-lg-3 .img-fluid {
+  object-fit: cover;
+  height: 100%;
+} */
+
+.vertical-text {
+  writing-mode: vertical-lr; /* Memutar teks menjadi vertikal */
+  transform: rotate(-180deg); /* Mengatasi orientasi terbalik akibat writing-mode */
+  white-space: nowrap; /* Mencegah teks melingkar pada batas wadah */
+  position: absolute; /* Mengeluarkan teks dari aliran dokumen normal */
+  top: 50%; /* Posisi vertikal di tengah */
+  left: -50px; /* Jarak dari sisi kiri */
+  margin-top: -1.5em; /* Penyesuaian vertical alignment */
+  font-size: 20px; /* Ukuran font */
+  font-weight: bold; /* Ketebalan font */
+  font-family: "Poppins";
+  -webkit-text-stroke: 1px black; /* Untuk browser WebKit (Chrome, Safari, Opera) */
+  /* text-stroke: 1px black; Untuk browser yang mendukung properti text-stroke */
+  -webkit-text-fill-color: white; /* Warna teks di dalam stroke (pilih warna yang sesuai) */
+  fill: white; /* Warna teks di dalam stroke (pilih warna yang sesuai) */
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }

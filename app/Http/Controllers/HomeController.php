@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Karyawan;
 use App\Models\Log;
+use App\Models\Loker;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $competencies = ['Web Programming', 'Desktop Programing', 'Machine Learning', 'Internet of Things', 'Embedded System', 'Design UI/UX', 'Design 2D & 3D', 'Mobile Programming'];
+        $lokers = Loker::orderBy('updated_at', 'desc')->get();
+        $company = Company::first();
 
         return view('home.index', [
             'title' => 'Makerindo',
-            'competencies' => $competencies
-        ]);
+        ], compact('lokers', 'company'));
+    }
+
+    public function show_loker(Loker $loker)
+    {
+        dd($loker);
     }
 
     public function dashboard()

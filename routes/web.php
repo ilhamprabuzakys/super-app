@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 require __DIR__ . '/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/{loker}', [HomeController::class, 'show_loker'])->name('loker.detail');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('home');
