@@ -7,9 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## SOAL 1 dan 2 ada di folder SOAL-ILHAM
-
-# Jika Bapak mau mereview dan menjalankan aplikasi saya di local maka bapak ikuti langkah berikut :
+# How to use :
 - Pastikan menggunakan DB MYSQL
 - Jalankan perintah composer install
 - copy isi file .env.example lalu buat file .env pada root direktori dan pastekan kode tadi padanya 
