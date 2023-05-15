@@ -15,6 +15,7 @@
    <div class="col-md-6">
        <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
            <div>
+            <a href="{{ route('index') . '/api/karyawan' }}" class="btn btn-danger"><i class="bx bx-detail me-1"></i> API </a>
                <a href="{{ route('karyawan.create') }}" class="btn btn-primary"><i class="bx bx-plus me-1"></i> Add New</a>
            </div>
        </div>
@@ -53,7 +54,7 @@
                                  <form action="{{ route('karyawan.destroy', $karyawan) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="badge rounded-pill badge-soft-danger border-0">
+                                    <button type="submit" class="badge rounded-pill badge-soft-danger border-0" onclick="return confirm('Are you sure?')">
                                        <i class="bx bx bx-trash-alt font-size-16"></i>
                                     </button>
                                  </form>

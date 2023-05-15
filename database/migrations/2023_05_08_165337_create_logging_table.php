@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('logging', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->enum('type', ['info', 'failed', 'success', 'warning']);
             $table->string('action');
             $table->string('on');

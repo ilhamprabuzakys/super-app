@@ -3,7 +3,7 @@
     <ul class="metismenu list-unstyled" id="side-menu">
         <li class="menu-title" data-key="t-menu">Menu</li>
  
-        <li class="{{ Request::is('/') ? 'mm-active' : '' }}">
+        <li class="{{ Request::is('dashboard') ? 'mm-active' : '' }}">
             <a href="{{ route('home') }}">
                 <i class="icon nav-icon" data-eva="grid-outline"></i>
                 <span class="menu-item" data-key="t-dashboards">Dashboards</span>

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Kecamatan;
 use App\Models\Kota;
-use App\Models\Log;
 use App\Models\User;
+use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -24,6 +24,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('updated_at', 'desc')->get();
+        dd($users);
         return view('users.list', [
             'title' => 'Users',
         ], compact('users'));

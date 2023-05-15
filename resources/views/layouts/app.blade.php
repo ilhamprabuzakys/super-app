@@ -37,32 +37,32 @@
 
          <!-- LOGO -->
          <div class="navbar-brand-box">
-            <a href="{{ route('home') }}" class="logo logo-dark">
+            {{-- <a href="{{ route('home') }}" class="logo logo-dark">
                <span class="logo-sm">
                   <img src="{{ asset('assets/images/logo-dark-sm.png') }}" alt="" height="22">
                </span>
                <span class="logo-lg">
                   <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="22">
                </span>
-            </a>
+            </a> --}}
 
             <a href="{{ route('home') }}" class="logo logo-light">
                <span class="logo-lg">
-                  <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="22">
+                  <img src="{{ asset('assets/images/logo-combine.png') }}" alt="" height="50">
                </span>
                <span class="logo-sm">
-                  <img src="{{ asset('assets/images/logo-light-sm.png') }}" alt="" height="22">
+                  <img src="{{ asset('assets/images/logo-combine.png') }}" alt="" height="22">
                </span>
             </a>
          </div>
 
-         <button type="button" class="btn btn-sm px-3 header-item vertical-menu-btn topnav-hamburger">
+         {{-- <button type="button" class="btn btn-sm px-3 header-item vertical-menu-btn topnav-hamburger">
             <div class="hamburger-icon">
                <span></span>
                <span></span>
                <span></span>
             </div>
-         </button>
+         </button> --}}
 
          <div data-simplebar class="sidebar-menu-scroll">
 

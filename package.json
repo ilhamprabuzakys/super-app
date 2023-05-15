@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^1.0.6",
-        "isotope-layout": "^3.0.6"
+        "isotope-layout": "^3.0.6",
+        "leaflet": "^1.9.3"
     }
 }

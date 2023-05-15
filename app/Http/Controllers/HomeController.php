@@ -8,6 +8,8 @@ use App\Models\Log;
 use App\Models\Loker;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Jikan\MyAnimeList\MalClient;
+use Jikan\Request\Manga\MangaRequest;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,7 @@ class HomeController extends Controller
         $competencies = ['Web Programming', 'Desktop Programing', 'Machine Learning', 'Internet of Things', 'Embedded System', 'Design UI/UX', 'Design 2D & 3D', 'Mobile Programming'];
         $lokers = Loker::orderBy('updated_at', 'desc')->get();
         $company = Company::first();
-
+        
         return view('home.index', [
             'title' => 'Makerindo',
         ], compact('lokers', 'company'));
@@ -24,7 +26,17 @@ class HomeController extends Controller
 
     public function show_loker(Loker $loker)
     {
-        dd($loker);
+        $company = Company::first();
+        return view('home.loker.show', [
+            'title' => "$loker->title"
+        ], compact('loker', 'company'));
+    }
+
+    public function message()
+    {
+        return view('home.message', [
+            'title' => 'Pesan untuk perusahaan'
+        ]);
     }
 
     public function dashboard()
@@ -45,5 +57,15 @@ class HomeController extends Controller
         return view('logs.list', [
             'title' => 'Log List',
         ], compact('logs'));
+    }
+
+    public function data_mal()
+    {
+        $jikan = new MalClient;
+        $anime = $jikan->getAnime(new \Jikan\Request\Anime\AnimeRequest(22));
+        $manga = $jikan->getManga(
+            (new MangaRequest(11))
+        );
+        dd($manga, $anime);
     }
 }

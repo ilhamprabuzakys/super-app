@@ -17,7 +17,7 @@ class LokerSeeder extends Seeder
     {
         Loker::create([
             'title' => 'IT Web Developer',
-            'salary' => '5.000.000 - 10.000',
+            'salary' => '5.000.000 - 10.000.000',
             'desc' => '
             <li>Menguasai HTML</li>
             <li>Menguasai CSS</li>
@@ -25,7 +25,7 @@ class LokerSeeder extends Seeder
         ]);
         Loker::create([
             'title' => 'IT Mobile Developer',
-            'salary' => '5.000.000 - 10.000',
+            'salary' => '5.000.000 - 10.000.000',
             'desc' => '
             <li>Menguasai Java</li>
             <li>Menguasai Spring</li>
@@ -33,7 +33,7 @@ class LokerSeeder extends Seeder
         ]);
         Loker::create([
             'title' => 'IT Desktop Developer',
-            'salary' => '5.000.000 - 10.000',
+            'salary' => '5.000.000 - 10.000.000',
             'desc' => '
             <li>Menguasai C++</li>
             <li>Menguasai Unity</li>'

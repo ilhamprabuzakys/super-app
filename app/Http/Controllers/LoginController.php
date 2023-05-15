@@ -63,7 +63,7 @@ class LoginController extends Controller
                 'last_login_at' => Carbon::now()->toDateTimeString(),
                 'last_login_ip' => $request->getClientIp()
             ]);
-            return redirect()->intended('/')->with('success', 'Login successfully!');
+            return redirect()->intended('/dashboard')->with('success', 'Login successfully!');
         }
 
         return back()->with(
