@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Coordinate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class MapController extends Controller
 {
@@ -19,6 +21,12 @@ class MapController extends Controller
         return view('home.map.index', [
             'title' => 'Map'
         ], compact('company'));
+    }
+
+    public function json()
+    {
+        $results = DB::table('coordinates')->select('name', 'latitude', 'longitude')->get();
+        return \json_encode($results);
     }
     
     public function index2()

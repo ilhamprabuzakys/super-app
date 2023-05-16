@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             KotaSeeder::class,
             LokerSeeder::class,
             CompanySeeder::class,
+            CoordinateSeeder::class,
         ];
         
         foreach ($seeders as $seeder) {

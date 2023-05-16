@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 @section('hero')
    <!-- ======= Hero Section ======= -->
-   <section id="hero" class="hero d-flex align-items-center">
+   <section id="hero" class="hero d-flex align-items-center" style="margin-bottom: 200px;">
 
       <div class="container">
          <div class="row">
@@ -21,7 +21,7 @@
 @endsection
 @section('content')
    <!-- ======= About Section ======= -->
-   <section id="about" class="about about-1">
+   <section id="about" class="about about-1"  style="margin-bottom: 200px;">
 
       <div class="container wow zoomInDown" data-wow-duration="1.3s" data-wow-delay="0.1s">
       {{-- <div class="container" data-aos="fade-up" data-aos-delay="100"> --}}
@@ -33,7 +33,7 @@
    </section><!-- End About Section -->
 
    <!-- ======= About Image Section ======= -->
-   <section id="about" class="about about-2">
+   <section id="about" class="about about-2"  style="margin-bottom: 200px;">
       <div class="container" data-aos="fade-up" data-aos-delay="300">
          <div class="content3">
             <iframe width="100%" height="530px" src="https://www.youtube.com/embed/arSNDfhqMhI" title="YouTube video player" frameborder="0"
@@ -43,7 +43,7 @@
    </section><!-- End About Image Section -->
 
    <!-- ======= About Detail Section ======= -->
-   <section id="about" class="about about-3">
+   <section id="about" class="about about-3"  style="margin-bottom: 200px;">
       <div class="container" data-aos="zoom-out">
          <header class="section-header">
             <h1 class="text-uppercase text-gradient">About Us</h1>
@@ -68,7 +68,7 @@
    </section><!-- End About Detail Section -->
 
    <!-- ======= Counts Section ======= -->
-   <section id="counts" class="counts">
+   <section id="counts" class="counts"  style="margin-bottom: 200px;">
 
       <div class="container" data-aos="fade-up">
 
@@ -165,7 +165,7 @@
    <!-- End Counts Section -->
 
       <!-- ======= Competency Section ======= -->
-      <section id="competency" class="portfolio">
+      <section id="competency" class="portfolio"  style="margin-bottom: 200px;">
 
          <div class="container" data-aos="fade-up">
             <header class="section-header">
@@ -218,7 +218,7 @@
       <!-- End Competency Section -->
 
    <!-- ======= Recent Blog Posts Section ======= -->
-   <section id="blog" class="recent-blog-posts">
+   <section id="blog" class="recent-blog-posts"  style="margin-bottom: 200px;">
 
       <div class="container slideInLeft wow" data-wow-duration="1s" data-wow-delay="0.2s">
 

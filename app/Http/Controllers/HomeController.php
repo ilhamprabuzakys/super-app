@@ -8,6 +8,7 @@ use App\Models\Log;
 use App\Models\Loker;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Jikan\MyAnimeList\MalClient;
 use Jikan\Request\Manga\MangaRequest;
 

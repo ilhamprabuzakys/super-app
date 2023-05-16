@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthOtpController;
+use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MapController;
@@ -30,4 +32,11 @@ Route::get('/loker/{loker}', [HomeController::class, 'show_loker'])->name('loker
 // Route::get('/message', [MessageController::class, 'index'])->name('message.index'); 
 Route::resource('/message', MessageController::class);
 Route::get('/map', [MapController::class, 'index'])->name('map.index');
+Route::get('/coordinates/json', [MapController::class, 'json'])->name('map.json');
 Route::get('/map2', [MapController::class, 'index2'])->name('map.index2');
+Route::get('/otp-phone', [FirebaseController::class, 'index'])->name('firebase.index');
+
+Route::controller(AuthOtpController::class)->group(function()
+{
+    Route::get('/otp/login', 'login')->name('otp.login');
+});

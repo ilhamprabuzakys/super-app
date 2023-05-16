@@ -20,6 +20,7 @@ class RegisterController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required|max:255',
                 'email' => 'required|email:dns|unique:users',
+                'mobile_no' => ['required', 'string', 'max:255'],
                 'password' => 'required|min:5|max:255|confirmed'
                 // 'username' => ['required', 'min:4', 'max:255', 'unique:users'],
             ]);
@@ -32,6 +33,7 @@ class RegisterController extends Controller
                 'email' => $validatedData['email'],
                 'password' => $validatedData['password'],
                 'username' => $username,
+                'mobile_no' => $validatedData['mobile_no'],
             ]);
 
             return redirect()->route('login')->with('success', 'Your account has been <b>successfully</b> created! Please login');
