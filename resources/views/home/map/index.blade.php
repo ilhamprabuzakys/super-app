@@ -1,4 +1,7 @@
-@extends('layouts.landing')
+@extends('layouts.app')
+@section('title')
+   <h4 class="page-title">Map</h4>
+@endsection
 @push('head')
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -21,7 +24,7 @@
 @endpush
 @section('content')
    <!-- ======= Send Map Section ======= -->
-   <div style="margin-top: 200px">
+   <div>
       <div class="container-fluid wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.1s">
          {{-- <div class="card shadow-lg mb-2">
             <div class="card-body">
@@ -41,7 +44,7 @@
 
    <!-- End Send Map Section -->
 @endsection
-@push('outer-scripts')
+@push('scripts')
    <script>
       const providerOSM = new GeoSearch.OpenStreetMapProvider();
       // lyrs parameter
@@ -92,9 +95,9 @@
       
 
       const baseLayers = {
-         'Street': street,
+         'Hybrid': hybrid,
          'Satelite': satellite,
-         'Hybrid': hybrid
+         'Street': street,
       };
 
       // const marker = L.marker([-6.967606, 107.6587713]).addTo(map);

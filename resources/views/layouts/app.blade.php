@@ -5,8 +5,9 @@
    <meta charset="utf-8" />
    <title>{{ $title . ' - ' . config('app.name') }}</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta content="Best Corporation App" name="description" />
-   <meta content="Besto" name="ilhamprabuzakys" />
+   <meta name="csrf-token" content="{{ csrf_token() }}">
+   <meta content="Mutlipurpose App" name="description" />
+   <meta content="Multipurpose App" name="ilhamprabuzakys" />
    <!-- App favicon -->
    <link rel="shortcut icon" href="{{ asset('icon.png') }}">
 
@@ -19,7 +20,8 @@
    <!-- App Css-->
    <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
    @stack('style')
-
+   @stack('head')
+   @vite('resources/css/app.css')
 </head>
 
 
@@ -56,13 +58,13 @@
             </a>
          </div>
 
-         {{-- <button type="button" class="btn btn-sm px-3 header-item vertical-menu-btn topnav-hamburger">
+         <button type="button" class="btn btn-sm px-3 header-item vertical-menu-btn topnav-hamburger">
             <div class="hamburger-icon">
                <span></span>
                <span></span>
                <span></span>
             </div>
-         </button> --}}
+         </button>
 
          <div data-simplebar class="sidebar-menu-scroll">
 
@@ -84,7 +86,7 @@
       <!-- ============================================================== -->
       <div class="main-content">
          <div class="page-content">
-            <div class="container-fluid">
+            <div class="container-fluid" id="app">
                @include('components.session')
 
                @yield('content')
@@ -139,6 +141,7 @@
    @stack('scripts')
 
    <script src="{{ asset('assets/js/app.js') }}"></script>
+   @vite('resources/js/app.js')
 
 </body>
 

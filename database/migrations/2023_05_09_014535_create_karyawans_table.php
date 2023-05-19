@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('karyawan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->unique();
+            $table->string('nama');
             $table->smallInteger('umur');
             $table->enum('jenis_kelamin', ['Pria', 'Wanita']);
             $table->string('alamat');
-            $table->foreignId('user_id');
-            $table->foreignId('kota_id');
-            $table->foreignId('kecamatan_id');
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('kota_id')->nullable();
+            $table->foreignId('kecamatan_id')->nullable();
             $table->foreignId('kelurahan_id')->nullable();
             $table->timestamps();
         });

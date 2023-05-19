@@ -4,24 +4,24 @@
 @endsection
 
 @section('content')
+   <div id="app"></div>
+   <div class="row align-items-center">
+      <div class="col-md-6">
+         <div class="mb-3">
+            <h5 class="card-title">Daftar Karyawan <span class="text-muted fw-normal ms-2">({{ $karyawans->count() }})</span></h5>
+         </div>
+      </div>
 
-<div class="row align-items-center">
-   <div class="col-md-6">
-       <div class="mb-3">
-           <h5 class="card-title">Daftar Karyawan <span class="text-muted fw-normal ms-2">({{ $karyawans->count() }})</span></h5>
-       </div>
-   </div>
-
-   <div class="col-md-6">
-       <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-           <div>
-            <a href="{{ route('index') . '/api/karyawan' }}" class="btn btn-danger"><i class="bx bx-detail me-1"></i> API </a>
+      <div class="col-md-6">
+         <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
+            <div>
+               <a href="{{ route('index') . '/api/karyawan' }}" class="btn btn-danger"><i class="bx bx-detail me-1"></i> API </a>
                <a href="{{ route('karyawan.create') }}" class="btn btn-primary"><i class="bx bx-plus me-1"></i> Add New</a>
-           </div>
-       </div>
+            </div>
+         </div>
 
+      </div>
    </div>
-</div>
    <div class="row">
       <div class="col-xl-12">
          <div class="card">

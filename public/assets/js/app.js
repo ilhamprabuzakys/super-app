@@ -2,46 +2,7 @@
 	"use strict";
 	var t, e, a, s, n = localStorage.getItem("language"),
 		o = "en";
-		var urldef = "http://best-corporation.test/";
-
-	function l(e) {
-		document.getElementsByClassName("header-lang-img").forEach(function(t) {
-			if (t) {
-				switch (e) {
-					case "eng":
-						t.src = "http://best-corporation.test/assets/images/flags/us.jpg";
-						break;
-					case "sp":
-						t.src = "http://best-corporation.test/assets/images/flags/spain.jpg";
-						break;
-					case "gr":
-						t.src = "http://best-corporation.test/assets/images/flags/germany.jpg";
-						break;
-					case "it":
-						t.src = "http://best-corporation.test/assets/images/flags/italy.jpg";
-						break;
-					case "ru":
-						t.src = "http://best-corporation.test/assets/images/flags/russia.jpg";
-						break;
-					default:
-						t.src = "http://best-corporation.test/assets/images/flags/us.jpg"
-				}
-				localStorage.setItem("language", e), n = localStorage.getItem("language"),
-					function() {
-						null == n && l(o);
-						var t = new XMLHttpRequest;
-						t.open("GET", "http://best-corporation.test/assets/lang/" + n + ".json"), t.onreadystatechange = function() {
-							var a;
-							4 === this.readyState && 200 === this.status && (a = JSON.parse(this.responseText), Object.keys(a).forEach(function(e) {
-								document.querySelectorAll("[data-key='" + e + "']").forEach(function(t) {
-									t.textContent = a[e]
-								})
-							}))
-						}, t.send()
-					}()
-			}
-		})
-	}
+		var urldef = "http://mt-id.test/";
 
 	function r() {
 		var t = document.querySelectorAll(".counter-value");

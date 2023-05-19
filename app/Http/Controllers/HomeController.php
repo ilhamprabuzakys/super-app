@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\WebsocketDemoEvent;
 use App\Models\Company;
 use App\Models\Karyawan;
 use App\Models\Log;
@@ -19,7 +20,7 @@ class HomeController extends Controller
         $competencies = ['Web Programming', 'Desktop Programing', 'Machine Learning', 'Internet of Things', 'Embedded System', 'Design UI/UX', 'Design 2D & 3D', 'Mobile Programming'];
         $lokers = Loker::orderBy('updated_at', 'desc')->get();
         $company = Company::first();
-        
+
         return view('home.index', [
             'title' => 'Makerindo',
         ], compact('lokers', 'company'));

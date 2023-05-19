@@ -186,7 +186,7 @@
                      </div>
                   </div>
                   <div class="row">
-                     <button type="submit" class="send-message-btn2 mx-1 mt-2 mb-4" style="font-size: 16px">Send</button>
+                     <button type="submit" class="btn btn-outline-dark mx-1 mt-2 mb-4" style="font-size: 16px">Send</button>
                      <span>Ingin menggunakan layanan kami pada bidang lain? <a href="{{ route('index') . '/#contact' }}" class="my-2 text-decoration-none">Klik disini</a> </span>
                   </div>
                </form>

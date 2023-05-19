@@ -22,13 +22,17 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 header-item vertical-menu-btn topnav-hamburger">
+            {{-- <button type="button" class="btn btn-sm px-3 font-size-16 header-item vertical-menu-btn topnav-hamburger">
                 <div class="hamburger-icon open">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </button>
+            </button> --}}
+
+            {{-- <button type="button" class="btn btn-sm px-3 font-size-16 header-item" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                <i class="fa fa-fw fa-bars"></i>
+            </button> --}}
 
             <div class="d-none d-sm-block ms-3 align-self-center">
                 @yield('title')

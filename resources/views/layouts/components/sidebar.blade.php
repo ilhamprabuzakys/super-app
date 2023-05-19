@@ -14,6 +14,12 @@
                 <li><a href="dashboard-crypto.html" data-key="t-crypto">Crypto</a></li>
             </ul> --}}
         </li>
+        <li class="{{ Request::is('chat') ? 'mm-active' : '' }}">
+            <a href="{{ route('chat.index') }}">
+                <i class="icon nav-icon" data-eva="grid-outline"></i>
+                <span class="menu-item" data-key="t-chats">ChatApp</span>
+            </a>
+        </li>
  
         <li class="menu-title" data-key="t-applications">DATA</li>
 
@@ -32,10 +38,11 @@
             </a>
         </li> --}}
  
-        <li class="{{ Request::is('products*') ? 'mm-active' : '' }}">
-            <a href="apps-file-manager.html">
+        <li class="{{ Request::is('map*') ? 'mm-active' : '' }}">
+            <a href="{{ route('map.index') }}">
                 <i class="icon nav-icon" data-eva="archive-outline"></i>
-                <span class="menu-item" data-key="t-filemanager">Products</span>
+                <span class="menu-item" data-key="t-filemanager">Maps</span>
+                <span class="badge rounded-pill badge-soft-primary">{{ \App\Models\Coordinate::count() }}</span>
             </a>
         </li>
  

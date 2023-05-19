@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PlaygroundEvent;
+use App\Events\WebsocketDemoEvent;
 use App\Models\Karyawan;
 use App\Models\Log;
 use App\Models\User;
@@ -18,6 +20,9 @@ class KaryawanController extends Controller
     public function index()
     {
         $karyawans = Karyawan::orderBy('updated_at', 'desc')->get();
+
+        // broadcast(new WebsocketDemoEvent('some data'));
+        // \event(new PlaygroundEvent());
         return view('karyawan.list', [
             'title' => 'Daftar Karyawan',
         ], compact('karyawans'));
@@ -52,7 +57,7 @@ class KaryawanController extends Controller
         ]);
 
         if ($validator->fails()) {
-            // dd($validator->errors());
+            dd($validator->errors());
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -67,12 +72,16 @@ class KaryawanController extends Controller
             'description' => "Karyawan data $karyawan->nama was successfully stored."
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $karyawan->nama,
             'email' => "$karyawan->id.karyawan@gmail.com",
             'username' => "$karyawan->id.karyawan",
             'password' => \bcrypt('password'),
             'role' => 'user',
+        ]);
+
+        $karyawan->update([
+            'user_id' => $user->id,
         ]);
 
         Log::create([

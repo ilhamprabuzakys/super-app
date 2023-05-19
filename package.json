@@ -5,15 +5,18 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@types/pusher-js": "^5.1.0",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "pusher-js": "4.3",
         "vite": "^4.0.0"
     },
     "dependencies": {
         "@inertiajs/vue3": "^1.0.6",
         "isotope-layout": "^3.0.6",
+        "laravel-echo": "^1.15.1",
         "leaflet": "^1.9.3"
     }
 }

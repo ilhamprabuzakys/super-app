@@ -11,7 +11,7 @@
                <h6 data-wow-duration="1.5s" data-wow-delay="0.8s" class="text-uppercase wow fadeInLeft" style="font-weight: 500;">Build solution
                   without exception</h6>
             </div>
-            <div class="col-lg-6 hero-img wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="0.5s" >
+            <div class="col-lg-6 hero-img wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="0.5s">
                <img src="landing/assets/img/about.jpg" class="img-fluid rounded-1" alt="">
             </div>
          </div>
@@ -21,10 +21,10 @@
 @endsection
 @section('content')
    <!-- ======= About Section ======= -->
-   <section id="about" class="about about-1"  style="margin-bottom: 200px;">
+   <section id="about" class="about about-1" style="margin-bottom: 200px;">
 
       <div class="container wow zoomInDown" data-wow-duration="1.3s" data-wow-delay="0.1s">
-      {{-- <div class="container" data-aos="fade-up" data-aos-delay="100"> --}}
+         {{-- <div class="container" data-aos="fade-up" data-aos-delay="100"> --}}
          <header class="section-header">
             <h1 class="text-uppercase text-gradient h1-big">About Us</h1>
          </header>
@@ -33,7 +33,7 @@
    </section><!-- End About Section -->
 
    <!-- ======= About Image Section ======= -->
-   <section id="about" class="about about-2"  style="margin-bottom: 200px;">
+   <section id="about" class="about about-2" style="margin-bottom: 200px;">
       <div class="container" data-aos="fade-up" data-aos-delay="300">
          <div class="content3">
             <iframe width="100%" height="530px" src="https://www.youtube.com/embed/arSNDfhqMhI" title="YouTube video player" frameborder="0"
@@ -43,7 +43,7 @@
    </section><!-- End About Image Section -->
 
    <!-- ======= About Detail Section ======= -->
-   <section id="about" class="about about-3"  style="margin-bottom: 200px;">
+   <section id="about" class="about about-3" style="margin-bottom: 200px;">
       <div class="container" data-aos="zoom-out">
          <header class="section-header">
             <h1 class="text-uppercase text-gradient">About Us</h1>
@@ -68,7 +68,7 @@
    </section><!-- End About Detail Section -->
 
    <!-- ======= Counts Section ======= -->
-   <section id="counts" class="counts"  style="margin-bottom: 200px;">
+   <section id="counts" class="counts" style="margin-bottom: 200px;">
 
       <div class="container" data-aos="fade-up">
 
@@ -79,39 +79,39 @@
 
          <!-- <div class="row">
 
-       <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-         <div class="box">
-           <img src="landing/assets/img/values-1.png" class="img-fluid" alt="">
-           <h3>Ad cupiditate sed est odio</h3>
-           <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
-         </div>
-       </div>
-     
-       <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-         <div class="box">
-           <img src="landing/assets/img/values-1.png" class="img-fluid" alt="">
-           <h3>Ad cupiditate sed est odio</h3>
-           <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
-         </div>
-       </div>
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="landing/assets/img/values-1.png" class="img-fluid" alt="">
+              <h3>Ad cupiditate sed est odio</h3>
+              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+            </div>
+          </div>
+        
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="landing/assets/img/values-1.png" class="img-fluid" alt="">
+              <h3>Ad cupiditate sed est odio</h3>
+              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+            </div>
+          </div>
 
-       <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-         <div class="box">
-           <img src="landing/assets/img/values-2.png" class="img-fluid" alt="">
-           <h3>Voluptatem voluptatum alias</h3>
-           <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
-         </div>
-       </div>
+          <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="landing/assets/img/values-2.png" class="img-fluid" alt="">
+              <h3>Voluptatem voluptatum alias</h3>
+              <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+            </div>
+          </div>
 
-       <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-         <div class="box">
-           <img src="landing/assets/img/values-3.png" class="img-fluid" alt="">
-           <h3>Fugit cupiditate alias nobis.</h3>
-           <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-         </div>
-       </div>
+          <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="landing/assets/img/values-3.png" class="img-fluid" alt="">
+              <h3>Fugit cupiditate alias nobis.</h3>
+              <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+            </div>
+          </div>
 
-     </div> -->
+        </div> -->
          <div class="row gy-4">
 
             <div class="col-lg-3 col-md-6">
@@ -164,61 +164,61 @@
    </section>
    <!-- End Counts Section -->
 
-      <!-- ======= Competency Section ======= -->
-      <section id="competency" class="portfolio"  style="margin-bottom: 200px;">
+   <!-- ======= Competency Section ======= -->
+   <section id="competency" class="portfolio" style="margin-bottom: 200px;">
 
-         <div class="container" data-aos="fade-up">
-            <header class="section-header">
-               <h2 class="text-gradient fw-bold"> Our Competency</h2>
-            </header>
+      <div class="container" data-aos="fade-up">
+         <header class="section-header">
+            <h2 class="text-gradient fw-bold"> Our Competency</h2>
+         </header>
 
-            <div class="row g-2 border-2 competency-sect" data-aos="fade-in" data-aos-delay="200" data-masonry='{"percentPosition": true }'>
-               {{-- <h2 class="vertical-text text-gradient"> Our Competency</h2> --}}
-               {{-- <div class="col-lg-1">
+         <div class="row g-2 border-2 competency-sect" data-aos="fade-in" data-aos-delay="200" data-masonry='{"percentPosition": true }'>
+            {{-- <h2 class="vertical-text text-gradient"> Our Competency</h2> --}}
+            {{-- <div class="col-lg-1">
                   <header class="section-header">
                      <h2 class="vertical-text text-gradient fw-bold"> Our Competency</h2>
                   </header>
                </div> --}}
 
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Web Programming</h3>
-                  <img src="landing/assets/img/competency/cropped/web-programming.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">UI/UX</h3>
-                  <img src="landing/assets/img/competency/cropped/ui-ux.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Machine Learning</h3>
-                  <img src="landing/assets/img/competency/cropped/machine-learning.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Desktop Programming</h3>
-                  <img src="landing/assets/img/competency/cropped/desktop-programming.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Mobile Programming</h3>
-                  <img src="landing/assets/img/competency/cropped/mobile-programming.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Product Design</h3>
-                  <img src="landing/assets/img/competency/cropped/product-design.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Embedded System</h3>
-                  <img src="landing/assets/img/competency/cropped/embedded-system.jpg" class="img-fluid rounded" alt="">
-               </div>
-               <div class="col-lg-3">
-                  <h3 class="text-over-image">Internet of Things</h3>
-                  <img src="landing/assets/img/competency/cropped/iot.jpg" class="img-fluid rounded" alt="">
-               </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Web Programming</h3>
+               <img src="landing/assets/img/competency/cropped/web-programming.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">UI/UX</h3>
+               <img src="landing/assets/img/competency/cropped/ui-ux.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Machine Learning</h3>
+               <img src="landing/assets/img/competency/cropped/machine-learning.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Desktop Programming</h3>
+               <img src="landing/assets/img/competency/cropped/desktop-programming.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Mobile Programming</h3>
+               <img src="landing/assets/img/competency/cropped/mobile-programming.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Product Design</h3>
+               <img src="landing/assets/img/competency/cropped/product-design.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Embedded System</h3>
+               <img src="landing/assets/img/competency/cropped/embedded-system.jpg" class="img-fluid rounded" alt="">
+            </div>
+            <div class="col-lg-3">
+               <h3 class="text-over-image">Internet of Things</h3>
+               <img src="landing/assets/img/competency/cropped/iot.jpg" class="img-fluid rounded" alt="">
             </div>
          </div>
-      </section>
-      <!-- End Competency Section -->
+      </div>
+   </section>
+   <!-- End Competency Section -->
 
    <!-- ======= Recent Blog Posts Section ======= -->
-   <section id="blog" class="recent-blog-posts"  style="margin-bottom: 200px;">
+   <section id="blog" class="recent-blog-posts" style="margin-bottom: 200px;">
 
       <div class="container slideInLeft wow" data-wow-duration="1s" data-wow-delay="0.2s">
 
@@ -251,15 +251,15 @@
                </div>
             @endforelse
          </div>
-         </div>
-         </div>
+      </div>
+      </div>
 
       </div>
 
    </section><!-- End Recent Blog Posts Section -->
 @endsection
 @section('contact')
-@include('layouts.components.landing.contact')
+   @include('layouts.components.landing.contact')
 @endsection
 @push('script')
    <!-- Vendor JS Files -->
