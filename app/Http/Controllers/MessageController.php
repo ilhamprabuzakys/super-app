@@ -8,6 +8,8 @@ use App\Models\Message;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\MailNotify;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class MessageController extends Controller
@@ -71,7 +73,18 @@ class MessageController extends Controller
             'on' => 'Message',
             'description' => "Message from $message->sekolah_nama was successfully stored."
         ]);
-        return back()->with('message', "Pesan anda telah berhasil kami <b>simpan!</b>");
+
+        $data = [
+            'subject' => $message->sekolah_nama,
+            'body' => $message->pesan_utama
+        ];
+        try {
+            Mail::to('ilahazs.login@gmail.com')->send(new MailNotify($data));
+            return back()->with('message', "Pesan anda telah berhasil kami <b>simpan!</b>");
+        } catch (\Throwable $th) {
+            dd($th);
+            return back()->with('error', "Maaf terjadi kesalahan, periksa data mu <b>kembali!</b>");
+        }
     }
 
 

@@ -14,11 +14,11 @@
    {{-- Box Icons Css --}}
    <link rel="stylesheet" href="{{ asset('assets/libs/box-icons/css/boxicons.min.css') }}">
    <!-- Bootstrap Css -->
-   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap-style"/>
    <!-- Icons Css -->
    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
    <!-- App Css-->
-   <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+   <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
    @stack('style')
    @stack('head')
    @vite('resources/css/app.css')
@@ -50,10 +50,10 @@
 
             <a href="{{ route('home') }}" class="logo logo-light">
                <span class="logo-lg">
-                  <img src="{{ asset('assets/images/logo-combine.png') }}" alt="" height="50">
+                  <img src="{{ asset('assets/images/logo-combine.png') }}" alt="" width="155">
                </span>
-               <span class="logo-sm">
-                  <img src="{{ asset('assets/images/logo-combine.png') }}" alt="" height="22">
+               <span class="logo-sm ">
+                  <img src="{{ asset('icon.png') }}" alt="" width="30" class="me-2">
                </span>
             </a>
          </div>

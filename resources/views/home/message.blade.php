@@ -6,14 +6,23 @@
          <header class="section-header">
             <h2 class="">Kirim Pesan</h2>
             <!-- <p>Contact Us</p> -->
-         @if(session('message'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-               <div class="d-flex align-items-center">
-                  <i class="bx bxs-badge-check me-2"></i>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <span>{!! session('message') !!}</span>
+            @if (session('message'))
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <div class="d-flex align-items-center">
+                     <i class="bx bxs-badge-check me-2"></i>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     <span>{!! session('message') !!}</span>
+                  </div>
                </div>
-            </div>
+            @endif
+            @if (session('error'))
+               <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <div class="d-flex align-items-center">
+                     <i class="bx bxs-badge-check me-2"></i>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     <span>{!! session('error') !!}</span>
+                  </div>
+               </div>
             @endif
          </header>
          <div class="row gy-4">
@@ -27,56 +36,62 @@
                               <label for="" class="form-label">Nama</label>
                               <input type="text" class="form-control @error('nama_pengirim')
                               is-invalid
-                           @enderror" name="nama_pengirim" placeholder="John Doe" {{ old('nama_pengirim') }} required>
+                           @enderror" name="nama_pengirim"
+                                 placeholder="John Doe" {{ old('nama_pengirim') }} required>
                               @error('nama_pengirim')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                            <div class="mb-3">
                               <label for="" class="form-label">Posisi</label>
-                              <input type="text" name="jabatan_pengirim" class="form-control @error('jabatan_pengirim')
+                              <input type="text" name="jabatan_pengirim"
+                                 class="form-control @error('jabatan_pengirim')
                                  is-invalid
-                              @enderror" placeholder="Menjabat sebagai" {{ old('jabatan_pengirim') }} required>
+                              @enderror" placeholder="Menjabat sebagai"
+                                 {{ old('jabatan_pengirim') }} required>
                               @error('jabatan_pengirim')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                            <div class="mb-3">
                               <label for="" class="form-label">Email</label>
                               <input type="email" name="email_pengirim" class="form-control @error('email_pengirim')
                               is-invalid
-                           @enderror" placeholder="humanresource@smkn-it.com" value="{{ old('email_pengirim') }}" required>
+                           @enderror"
+                                 placeholder="humanresource@smkn-it.com" value="{{ old('email_pengirim') }}" required>
                               @error('email_pengirim')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                            <div class="mb-3">
                               <label for="" class="form-label">Phone Number</label>
                               <input type="number" class="form-control @error('phone_pengirim')
                               is-invalid
-                           @enderror" name="phone_pengirim" placeholder="08xx62xx55xx" value="{{ old('phone_pengirim') }}" required>
+                           @enderror" name="phone_pengirim"
+                                 placeholder="08xx62xx55xx" value="{{ old('phone_pengirim') }}" required>
                               @error('phone_pengirim')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                            <div class="mb-3">
                               <label for="" class="form-label">File Pendukung</label>
                               <input type="file" class="form-control @error('file_path')
                               is-invalid
-                           @enderror" name="file_path" placeholder="Your file" required>
+                           @enderror" name="file_path"
+                                 placeholder="Your file" required>
                               @error('file_path')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                         </div>
                      </div>
@@ -86,31 +101,34 @@
                               <label for="" class="form-label">Nama Sekolah</label>
                               <input type="text" class="form-control @error('sekolah_nama')
                               is-invalid
-                           @enderror" name="sekolah_nama" placeholder="SMK Negeri 4 Bandung" value="{{ old('sekolah_nama') }}" required>
+                           @enderror" name="sekolah_nama"
+                                 placeholder="SMK Negeri 4 Bandung" value="{{ old('sekolah_nama') }}" required>
                            </div>
                            <div class="row">
                               <div class="col-lg-4 mb-3">
                                  <label for="" class="form-label">Kelas</label>
                                  <select class="form-select @error('sekolah_kelas')
                                  is-invalid
-                              @enderror" name="sekolah_kelas" id="">
+                              @enderror" name="sekolah_kelas"
+                                    id="">
                                     <option selected disabled>Pilih Kelas</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                  </select>
                                  @error('sekolah_kelas')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                    <div class="invalid-feedback">
+                                       {{ $message }}
+                                    </div>
+                                 @enderror
                               </div>
                               <div class="col-lg-4 mb-3">
                                  <label for="" class="form-label">Jurusan</label>
                                  {{-- <input type="text" class="form-control" name="jurusan" placeholder="Rekayasa Perangkat Lunak" required> --}}
                                  <select class="form-select @error('sekolah_jurusan')
                                  is-invalid
-                              @enderror" name="sekolah_jurusan" id="">
+                              @enderror" name="sekolah_jurusan"
+                                    id="">
                                     <option selected disabled>Pilih Jurusan</option>
                                     <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                                     <option value="Teknik Elektro">Teknik Elektro</option>
@@ -119,16 +137,17 @@
                                     <option value="Teknik Otomasi Industri">Teknik Otomasi Industri</option>
                                  </select>
                                  @error('sekolah_jurusan')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                    <div class="invalid-feedback">
+                                       {{ $message }}
+                                    </div>
+                                 @enderror
                               </div>
                               <div class="col-lg-4 mb-3">
                                  <label for="" class="form-label">Tingkat</label>
                                  <select class="form-select @error('sekolah_tingkat')
                                  is-invalid
-                              @enderror" name="sekolah_tingkat" id="">
+                              @enderror" name="sekolah_tingkat"
+                                    id="">
                                     <option selected disabled>Pilih Tingkat</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -137,10 +156,10 @@
                                     <option value="5">5</option>
                                  </select>
                                  @error('sekolah_tingkat')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                    <div class="invalid-feedback">
+                                       {{ $message }}
+                                    </div>
+                                 @enderror
                               </div>
                            </div>
                            <div class="mb-3">
@@ -159,10 +178,10 @@
                                  <option value="Embedded System">Embedded System</option>
                               </select>
                               @error('magang_bidang')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
                            <div class="mb-3">
                               <label for="" class="form-label">Message</label>
@@ -170,11 +189,11 @@
                                  is-invalid
                               @enderror" name="pesan_utama" rows="9"
                                  placeholder="Hi Makerindo, can you help me? ..." required>{{ old('pesan_utama') }}</textarea>
-                                 @error('pesan_utama')
-                           <div class="invalid-feedback">
-                              {{ $message }}
-                           </div>
-                        @enderror
+                              @error('pesan_utama')
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
 
                            {{-- <div class="mb-3 text-center">
