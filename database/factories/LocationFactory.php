@@ -20,8 +20,8 @@ class LocationFactory extends Factory
         $maxLongitude = 114.775628;
 
         // Menghasilkan koordinat acak di dalam jangkauan Pulau Jawa
-        $latitude =fake()->latitude($minLatitude, $maxLatitude);
-        $longitude =fake()->longitude($minLongitude, $maxLongitude);
+        $latitude = fake()->latitude($minLatitude, $maxLatitude);
+        $longitude = fake()->longitude($minLongitude, $maxLongitude);
 
         return [
             'latitude' => $latitude,
