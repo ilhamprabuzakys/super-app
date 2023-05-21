@@ -2,39 +2,57 @@
 @section('title')
    <h4 class="page-title">Map</h4>
 @endsection
-@push('head')
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-      crossorigin="" />
-   <!-- Make sure you put this AFTER Leaflet's CSS -->
-   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-      crossorigin=""></script>
-   {{-- Geosearch --}}
-   {{-- <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script> --}}
-   <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@ 3.8.0/dist/geosearch.css" />
-   <script src="https://unpkg.com/leaflet-geosearch@3.8.0/dist/geosearch.umd.js"></script>
-   <!-- Load Esri Leaflet from CDN -->
-   <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
-   <!-- Load Esri Leaflet Vector from CDN -->
-   <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js" crossorigin=""></script>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" />
-   <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
-   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-@endpush
 @section('content')
    <!-- ======= Send Map Section ======= -->
    <div>
-      <div class="container-fluid wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.1s">
-         {{-- <div class="card shadow-lg mb-2">
-            <div class="card-body">
-                  <h2 class="text-center text-capitalize">Map Overview</h2>
-            </div>
-         </div> --}}
+      <div class="container-fluid">
          <div class="card shadow-lg">
-            {{-- <div class="card-header">
-               <h2 class="text-center text-uppercase">Map Overview</h2>
-            </div> --}}
+            <div class="card-body">
+               <form action="{{ route('map.coordinateStore') }}" method="post">
+                  @csrf
+                  <div class="mb-3 row">
+                     <div class="col-md-4">
+                        <label for="name" class="form-label">Nama</label>
+                     </div>
+                     <div class="col-md-8">
+                        <input class="form-control @error('name') is-invalid @enderror" type="text" value="{{ old('name') }}" name="name" required
+                           id="name">
+                        @error('name')
+                           <div class="invalid-feedback">
+                              {{ $message }}
+                           </div>
+                        @enderror
+                     </div>
+                  </div>
+                  <div class="mb-3 row">
+                     <div class="col-md-6">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        <input class="form-control @error('latitude') is-invalid @enderror" type="text" value="{{ old('latitude') }}" name="latitude" required
+                           id="latitude">
+                        @error('latitude')
+                           <div class="invalid-feedback">
+                              {{ $message }}
+                           </div>
+                        @enderror
+                     </div>
+                     <div class="col-md-6">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        <input class="form-control @error('longitude') is-invalid @enderror" type="text" value="{{ old('longitude') }}" name="longitude" required
+                           id="longitude">
+                        @error('longitude')
+                           <div class="invalid-feedback">
+                              {{ $message }}
+                           </div>
+                        @enderror
+                     </div>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                     <button class="btn btn-primary" type="submit">Submit form</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div class="card shadow-lg">
             <div class="card-body">
                <div id="map" style="height: 500px"></div>
             </div>
@@ -168,8 +186,10 @@
                      .setContent("Koordinat : " + latitude + " - " + longitude)
                      .openOn(map);
 
-                  marker.bindPopup(`Name :<b>${data[index].name}</b><br />
-                  Coordinate : <b>${longitude} - ${latitude}</b>`)
+                  marker.bindPopup(`Name : <b>${data[index].name}</b><br />
+                  Coordinate :
+                  <br />Long : <b>${latitude}</b>
+                  <br />Lat : <b>${longitude}</b>`)
                      .openPopup();
                   // marker.bindPopup(`Name :<b>${data[index].name}</b><br />Coordinate : ${e.latlng.toString()}.`).openPopup();
                   // Coordinate : <b>${data[index].longitude} - ${data[index].latitude}</b><br/>
@@ -188,7 +208,9 @@
          // document.getElementById("longitude").value = longitude;
          let popup = L.popup()
             .setLatLng([latitude, longitude])
-            .setContent("Koordinat : " + latitude + " - " + longitude)
+            .setContent("Koordinat : " + `
+            <br />Long : <b>${latitude}</b> 
+            <br />Lat : <b>${longitude}</b> `)
             .openOn(map);
          if (theMarker != undefined) {
             map.removeLayer(theMarker);
@@ -276,5 +298,288 @@
       }
 
       getCurrentLocation();
+
+      const polygone = L.polygone([
+         [
+            107.65888727220181,
+            -6.96729490377869
+         ],
+         [
+            107.65886993459604,
+            -6.967295749230684
+         ],
+         [
+            107.65885276396072,
+            -6.967298277444509
+         ],
+         [
+            107.65883592565825,
+            -6.967302464072113
+         ],
+         [
+            107.65881958185055,
+            -6.967308268794026
+         ],
+         [
+            107.65880388993726,
+            -6.967315635707662
+         ],
+         [
+            107.65878900103995,
+            -6.967324493865686
+         ],
+         [
+            107.65877505854678,
+            -6.967334757959277
+         ],
+         [
+            107.6587621967315,
+            -6.967346329139691
+         ],
+         [
+            107.65875053946044,
+            -6.967359095970227
+         ],
+         [
+            107.6587401989995,
+            -6.967372935499423
+         ],
+         [
+            107.65873127493298,
+            -6.967387714445134
+         ],
+         [
+            107.65872385320465,
+            -6.967403290478115
+         ],
+         [
+            107.65871800528991,
+            -6.967419513592726
+         ],
+         [
+            107.65871378750757,
+            -6.9674362275515636
+         ],
+         [
+            107.65871124047729,
+            -6.967453271390113
+         ],
+         [
+            107.65871038872857,
+            -6.9674704809669175
+         ],
+         [
+            107.65871124046436,
+            -6.967487690544352
+         ],
+         [
+            107.65871378748221,
+            -6.967504734384772
+         ],
+         [
+            107.65871800525314,
+            -6.967521448346648
+         ],
+         [
+            107.65872385315781,
+            -6.967537671465347
+         ],
+         [
+            107.65873127487791,
+            -6.967553247503311
+         ],
+         [
+            107.65874019893828,
+            -6.967568026454705
+         ],
+         [
+            107.65875053939547,
+            -6.967581865990068
+         ],
+         [
+            107.65876219666526,
+            -6.9675946328270175
+         ],
+         [
+            107.65877505848181,
+            -6.967606204013847
+         ],
+         [
+            107.65878900097876,
+            -6.967616468113605
+         ],
+         [
+            107.65880388988217,
+            -6.967625326277314
+         ],
+         [
+            107.65881958180371,
+            -6.96763269319593
+         ],
+         [
+            107.65883592562145,
+            -6.967638497921933
+         ],
+         [
+            107.65885276393537,
+            -6.967642684552574
+         ],
+         [
+            107.65886993458312,
+            -6.96764521276827
+         ],
+         [
+            107.65888727220181,
+            -6.967646058220895
+         ],
+         [
+            107.65890460982048,
+            -6.96764521276827
+         ],
+         [
+            107.65892178046822,
+            -6.967642684552574
+         ],
+         [
+            107.65893861878214,
+            -6.967638497921933
+         ],
+         [
+            107.6589549625999,
+            -6.96763269319593
+         ],
+         [
+            107.65897065452144,
+            -6.967625326277314
+         ],
+         [
+            107.65898554342485,
+            -6.967616468113605
+         ],
+         [
+            107.6589994859218,
+            -6.967606204013847
+         ],
+         [
+            107.65901234773833,
+            -6.9675946328270175
+         ],
+         [
+            107.65902400500812,
+            -6.967581865990068
+         ],
+         [
+            107.65903434546533,
+            -6.967568026454705
+         ],
+         [
+            107.65904326952571,
+            -6.967553247503311
+         ],
+         [
+            107.6590506912458,
+            -6.967537671465347
+         ],
+         [
+            107.65905653915047,
+            -6.967521448346648
+         ],
+         [
+            107.65906075692139,
+            -6.967504734384772
+         ],
+         [
+            107.65906330393923,
+            -6.967487690544352
+         ],
+         [
+            107.65906415567505,
+            -6.9674704809669175
+         ],
+         [
+            107.65906330392632,
+            -6.967453271390113
+         ],
+         [
+            107.65906075689603,
+            -6.9674362275515636
+         ],
+         [
+            107.65905653911368,
+            -6.967419513592726
+         ],
+         [
+            107.65905069119896,
+            -6.967403290478115
+         ],
+         [
+            107.65904326947063,
+            -6.967387714445134
+         ],
+         [
+            107.65903434540412,
+            -6.967372935499423
+         ],
+         [
+            107.65902400494315,
+            -6.967359095970227
+         ],
+         [
+            107.65901234767209,
+            -6.967346329139691
+         ],
+         [
+            107.65899948585682,
+            -6.967334757959277
+         ],
+         [
+            107.65898554336364,
+            -6.967324493865686
+         ],
+         [
+            107.65897065446634,
+            -6.967315635707662
+         ],
+         [
+            107.65895496255305,
+            -6.967308268794026
+         ],
+         [
+            107.65893861874534,
+            -6.967302464072113
+         ],
+         [
+            107.65892178044288,
+            -6.967298277444509
+         ],
+         [
+            107.65890460980756,
+            -6.967295749230684
+         ],
+         [
+            107.65888727220181,
+            -6.96729490377869
+         ]
+      ]);
    </script> --}}
+@endpush
+@push('head')
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin="" />
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""></script>
+   {{-- Geosearch --}}
+   {{-- <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script> --}}
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@ 3.8.0/dist/geosearch.css" />
+   <script src="https://unpkg.com/leaflet-geosearch@3.8.0/dist/geosearch.umd.js"></script>
+   <!-- Load Esri Leaflet from CDN -->
+   <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+   <!-- Load Esri Leaflet Vector from CDN -->
+   <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js" crossorigin=""></script>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" />
+   <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 @endpush

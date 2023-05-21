@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
         $user1= User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
+            'mobile' => '085162783743',
             'username' => 'admin',
             'password' => \bcrypt('admin'),
             'role' => 'admin',
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
         $user2= User::create([
             'name' => 'Moderator',
             'email' => 'moderator@gmail.com',
+            'mobile' => '085155001870',
             'username' => 'moderator',
             'password' => \bcrypt('moderator'),
             'role' => 'moderator',
@@ -35,6 +37,7 @@ class UserSeeder extends Seeder
         $user3= User::create([
             'name' => 'User',
             'email' => 'user@gmail.com',
+            'mobile' => '085162783742',
             'username' => 'user',
             'password' => \bcrypt('user'),
             'role' => 'user',

@@ -7,6 +7,8 @@ use App\Models\Coordinate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Log;
+use Illuminate\Support\Facades\Validator;
 
 class MapController extends Controller
 {
@@ -21,6 +23,33 @@ class MapController extends Controller
         return view('home.map.index', [
             'title' => 'Map'
         ], compact('company'));
+    }
+
+    public function storeCoordinate(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required'],
+            'longitude' => ['required'],
+            'latitude' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->errors());
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $validatedData = $validator->validate();
+        $coordinate = Coordinate::create($validatedData);
+
+        Log::create([
+            'user_id' => auth()->user()->id,
+            'type' => 'success',
+            'action' => 'store',
+            'on' => 'Coordinate',
+            'description' => "New Coordinate Markey $coordinate->name was successfully stored."
+        ]);
+
+        return redirect()->back()->with('message', "Data Coordinate <b>$coordinate->name</b> telah berhasil <b>ditambahkan!</b>");
     }
 
     public function json()

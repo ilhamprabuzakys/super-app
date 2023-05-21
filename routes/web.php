@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(MapController::class)->group(function() {
         Route::get('/map', 'index')->name('map.index');
+        Route::post('/map', 'storeCoordinate')->name('map.coordinateStore');
         Route::get('/coordinates/json', 'json')->name('map.json');
     });
 
