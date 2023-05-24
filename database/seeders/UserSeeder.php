@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $user1= User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'mobile' => '085162783743',
+            // 'mobile_no' => '085162783743',
             'username' => 'admin',
             'password' => \bcrypt('admin'),
             'role' => 'admin',
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
         $user2= User::create([
             'name' => 'Moderator',
             'email' => 'moderator@gmail.com',
-            'mobile' => '085155001870',
+            // 'mobile_no' => '085155001870',
             'username' => 'moderator',
             'password' => \bcrypt('moderator'),
             'role' => 'moderator',
@@ -37,11 +37,20 @@ class UserSeeder extends Seeder
         $user3= User::create([
             'name' => 'User',
             'email' => 'user@gmail.com',
-            'mobile' => '085162783742',
+            // 'mobile_no' => '085162783742',
             'username' => 'user',
             'password' => \bcrypt('user'),
             'role' => 'user',
         ]);
+        
+        // $user4= User::create([
+        //     'name' => 'Ilham Prabu Zaky S',
+        //     'email' => 'ilhamprabuzakys@gmail.com',
+        //     // 'mobile_no' => '085162783742',
+        //     'username' => 'ilhamprabuzakys',
+        //     'password' => \bcrypt('password'),
+        //     'role' => 'user',
+        // ]);
 
         $karyawan1 = Karyawan::create([
             'nama' => 'Karyawan 1',
@@ -52,6 +61,7 @@ class UserSeeder extends Seeder
             'kecamatan_id' => \random_int(1,5),
             'user_id' => $user1->id,
         ]);
+
         $karyawan2 = Karyawan::create([
             'nama' => 'Karyawan 2',
             'umur' => random_int(20,50),

@@ -15,10 +15,10 @@ class CoordinateFactory extends Factory
     public function definition()
     {
         // Mendapatkan batas koordinat Pulau Jawa
-        $minLatitude = -9.668301;
-        $maxLatitude = -5.853037;
-        $minLongitude = 103.436212;
-        $maxLongitude = 114.775628;
+        $minLatitude = -7.668301;
+        $maxLatitude = -6.853037;
+        $minLongitude = 106.436212;
+        $maxLongitude = 108.775628;
 
         // Menghasilkan koordinat acak di dalam jangkauan Pulau Jawa
         $latitude = fake()->latitude($minLatitude, $maxLatitude);

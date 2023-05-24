@@ -185,6 +185,9 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Salman\Mqtt\MqttServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -211,7 +214,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-
+        'Mqtt' => \Salman\Mqtt\Facades\Mqtt::class,
+        'Socialite' => \Laravel\Socialite\Facades\Socialite::class,
     ])->toArray(),
 
 ];

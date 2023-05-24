@@ -1,5 +1,7 @@
 <?php
 
+use PhpMqtt\Client\Facades\MQTT;
+use PhpMqtt\Client\Message;
 use App\Events\HelloEvent;
 use App\Events\PlaygroundEvent;
 use App\Http\Controllers\ApiController;
@@ -10,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MqttController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 use App\Websockets\SocketHandler\UpdatePostSocketHandler;
@@ -66,3 +69,12 @@ Route::get('/ws', function () {
 });
 
 // WebSocketsRouter::webSocket('/socket/update-post', UpdatePostSocketHandler::class);
+
+Route::get('/publish', function () {
+    $message = 'Hi';
+    MQTT::publish('chatapp', 'Hllo');
+    return "Pesan MQTT dipublikasikan.";
+});
+
+Route::post('/subscribe', [MqttController::class, 'subscribe']);
+Route::post('/publish', [MqttController::class, 'publish']);

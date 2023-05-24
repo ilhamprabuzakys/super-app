@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\KaryawanController;
+use App\Http\Controllers\MqttController;
+use App\Http\Controllers\MqttSalmanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('karyawan', KaryawanController::class);
 
+Route::post('/mqtt/subscribe', [MqttController::class, 'subscribe']);
+Route::post('/mqtt/publish', [MqttController::class, 'publish']);
+
+// Route::post('/mqtt/publish/', [MqttSalmanController::class, 'SendMsgViaMqtt']);
+// Route::post('/mqtt/subscribe/', [MqttSalmanController::class, 'SubscribetoTopic']);
+// Route::get('/mqtt/publish/{topic}/{message}', [MqttSalmanController::class, 'SendMsgViaMqtt']);
+// Route::get('/mqtt/publish/{topic}', [MqttSalmanController::class, 'SubscribetoTopic']);

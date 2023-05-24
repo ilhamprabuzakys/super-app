@@ -2,7 +2,7 @@
 @section('auth-content')
    <div class="text-center">
       <h5 class="mb-0">Register Account</h5>
-      <p class="text-muted mt-2">Get your free Borex account now.</p>
+      <p class="text-muted mt-2">Get your free Makerindo account now.</p>
    </div>
 
    @include('auth.session')
@@ -23,18 +23,31 @@
          </div>
       </div>
       <div class="form-floating form-floating-custom mb-4">
-         <input type="email" class="form-control @error('name') is-invalid @enderror" id="input-email" placeholder="Enter Email" autocomplete="on" name="email" value="{{ old('email') }}" required>
-         @error('email')
+         <input type="text" class="form-control @error('auth_field') is-invalid @enderror" id="auth_field" placeholder="Enter Email/Phone" autocomplete="on" name="auth_field" value="{{ old('auth_field') }}" required>
+         @error('auth_field')
             <div class="invalid-feedback">
-               {{ $errors->first('email') }}
+               {{ $errors->first('auth_field') }}
             </div>
          @enderror
-         <label for="input-email">Email</label>
+         <label for="auth_field">Email/Phone</label>
          <div class="form-floating-icon">
             <i data-eva="email-outline"></i>
          </div>
       </div>
-      <div class="form-floating form-floating-custom mb-4">
+      {{-- <div class="form-floating form-floating-custom mb-4">
+         <input type="verification_code" class="form-control @error('verification_code') is-invalid @enderror" id="verification_code" placeholder="Enter Verification Code" autocomplete="on" name="verification_code"
+            value="{{ old('verification_code') }}" required>
+         @error('verification_code')
+            <div class="invalid-feedback">
+               {{ $errors->first('verification_code') }}
+            </div>
+         @enderror
+         <label for="verification_code">Verification Code</label>
+         <div class="form-floating-icon">
+            <i data-eva="phone-outline"></i>
+         </div>
+      </div> --}}
+      {{-- <div class="form-floating form-floating-custom mb-4">
          <input type="number" class="form-control @error('mobile_no') is-invalid @enderror" id="input-mobile_no" placeholder="Enter Mobile Number" autocomplete="on" name="mobile_no"
             value="{{ old('mobile_no') }}" required>
          @error('mobile_no')
@@ -46,8 +59,8 @@
          <div class="form-floating-icon">
             <i data-eva="phone-outline"></i>
          </div>
-      </div>
-
+      </div> --}}
+      <input type="hidden" name="username" value="username">
       {{-- <div class="form-floating form-floating-custom mb-4">
        <input type="text" class="form-control @error('username') is-invalid @enderror" id="input-username" placeholder="Enter username" required>
        <div class="invalid-feedback">
@@ -86,7 +99,7 @@
       </div>
 
       <div class="mb-4">
-         <p class="mb-0">By registering you agree to the BestCorperation <a href="#" class="text-primary">Terms of Use</a></p>
+         <p class="mb-0">By registering you agree to the Makerindo <a href="#" class="text-primary">Terms of Use</a></p>
       </div>
       <div class="mb-3">
          <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>

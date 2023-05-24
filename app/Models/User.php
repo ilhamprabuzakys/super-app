@@ -12,9 +12,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements OTPNotifiable
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasOTPNotify;
+    use HasApiTokens, HasFactory;
 
     protected $guarded = ['id'];
     protected $hidden = [

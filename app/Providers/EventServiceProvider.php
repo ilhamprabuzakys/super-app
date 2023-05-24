@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use PhpMqtt\Client\Facades\MQTT;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,7 +28,9 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $mqtt = MQTT::connection();
+        $mqtt->subscribe('chatapp2');
+        // MQTT::subscribe('chatapp', MqttMessageListener::class);
     }
 
     /**

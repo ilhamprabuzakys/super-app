@@ -73,13 +73,13 @@ class MessageController extends Controller
             'on' => 'Message',
             'description' => "Message from $message->sekolah_nama was successfully stored."
         ]);
-
         $data = [
             'subject' => $message->sekolah_nama,
             'body' => $message->pesan_utama
         ];
         try {
-            Mail::to('ilahazs.login@gmail.com')->send(new MailNotify($data));
+            Mail::to('ilhamprabuzakys@gmail.com')->send(new MailNotify($message));
+            dd('success');
             return back()->with('message', "Pesan anda telah berhasil kami <b>simpan!</b>");
         } catch (\Throwable $th) {
             dd($th);

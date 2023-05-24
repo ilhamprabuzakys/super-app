@@ -61,28 +61,10 @@
                                                 <td class="content-block"
                                                    style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;"
                                                    valign="top">
-                                                   Yth. PT. Makerindo Prima Solusi,<br>
+                                                   Yth. saudara {{ $data['user_nama'] }},<br>
                                                    di tempat<br>
-                                                   Dengan saya: {{ $nama_pengirim . ' sebagai ' . $jabatan_pengirim }}<br>
-
-                                                   Ingin mengajukan proposal terkait magang di perusahaan PT. Makerindo Prima Solusi.
+                                                   Ini adalah kode verifikasi otp mu :
                                                    <br>
-                                                   Dengan data : <br>
-                                                   <ul>
-                                                      <li>Dari Kelas : {{ $sekolah_kelas }}</li>
-                                                      <li>Magang : {{ $magang_bidang }}</li>
-                                                      <li>Email : {{ $email_pengirim }}</li>
-                                                      <li>Telp : {{ $phone_pengirim }}</li>
-                                                   </ul>
-                                                   <br> Berikut pesan tambahan dari kami : <br
-                                                   >
-                                                   <br>
-
-                                                   {!! $body !!}
-                                                   {{-- {{  $message->pesan_utama  }} --}}
-                                                   {{-- {{  $data['body']  }} --}}
-                                                   <br>
-
                                                 </td>
                                              </tr>
                                              <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -90,7 +72,7 @@
                                                    style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;"
                                                    valign="top">
                                                    <a href="#" itemprop="url"
-                                                      style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #63ad6f; margin: 0; border-color: #63ad6f; border-style: solid; border-width: 8px 16px;">APPROVE</a>
+                                                      style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #63ad6f; margin: 0; border-color: #63ad6f; border-style: solid; border-width: 8px 16px;">{{ $otp }}</a>
                                                 </td>
                                              </tr>
                                              <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">

@@ -55,6 +55,11 @@
        </div>
        
    </div> --}}
+   <div class="mt-1 mb-2 pb-2 text-center">
+      <p class="text-muted mb-0">Forgotten your password ? <a href="{{ route('password.request') }}"
+            class="text-primary fw-semibold"> Click here </a> </p>
+   </div>
+
       <div class="mb-3">
          <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In</button>
       </div>

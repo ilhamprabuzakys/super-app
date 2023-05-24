@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('verification_codes', function (Blueprint $table) {
+        Schema::create('temp_users', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('user_id')->nullable();
-            $table->string('user_name')->nullable();
-            $table->string('user_email')->nullable();
-            $table->string('user_mobile_no')->nullable();
-            $table->string('otp');
-            $table->timestamp('expire_at')->nullable();
+            $table->string('auth_field');
+            $table->string('name');
+            $table->string('email')->nullable();
+            $table->string('mobile_no')->nullable();
+            $table->string('username')->unique()->nullable();
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verification_codes');
+        Schema::dropIfExists('temp_users');
     }
 };
