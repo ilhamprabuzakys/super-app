@@ -21,16 +21,21 @@ class DatabaseSeeder extends Seeder
             LokerSeeder::class,
             CompanySeeder::class,
             CoordinateSeeder::class,
+            TagSeeder::class,
         ];
-        
-        foreach ($seeders as $seeder) {
-            if (class_exists($seeder)) {
-                $this->call($seeder);
-            }
-        }
 
-        // \App\Models\User::factory(10)->create();
-        // \App\Models\Karyawan::factory(10)->create();
-        \App\Models\Coordinate::factory(2000)->create();
+        try {
+            foreach ($seeders as $seeder) {
+                if (class_exists($seeder)) {
+                    $this->call($seeder);
+                }
+            }
+            // \App\Models\User::factory(10)->create();
+            // \App\Models\Karyawan::factory(10)->create();
+            \App\Models\Post::factory(50)->create();
+            \App\Models\Coordinate::factory(2000)->create();
+        } catch (\Throwable $th) {
+            dd($th, 'something went wrong');
+        }
     }
 }

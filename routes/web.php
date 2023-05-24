@@ -13,6 +13,7 @@ use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\MqttController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 use App\Websockets\SocketHandler\UpdatePostSocketHandler;
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/chat', 'index')->name('chat.index');
         Route::post('/chat-message', 'store')->name('chat.store');
     });
+
+    Route::resource('/posts', PostController::class);
 });
 
 Route::get('/send-event', function () {

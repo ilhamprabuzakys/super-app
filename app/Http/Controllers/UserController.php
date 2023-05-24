@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function grid()
     {
-        $users = User::orderBy('updated_at', 'desc')->get();
+        $users = User::with('posts')->orderBy('updated_at', 'desc')->get();
         return view('users.grid', [
             'title' => 'Users',
             'users' => $users,
@@ -24,7 +24,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('updated_at', 'desc')->get();
-        dd($users);
+        // $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
         return view('users.list', [
             'title' => 'Users',
         ], compact('users'));

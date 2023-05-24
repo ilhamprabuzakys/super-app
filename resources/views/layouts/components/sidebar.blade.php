@@ -46,13 +46,13 @@
             </a>
         </li>
  
-        {{-- <li class="{{ Request::is('ecommerce*') ? 'mm-active' : '' }}">
+        <li class="{{ Request::is('post*') ? 'mm-active' : '' }}">
             <a href="#">
                 <i class="icon nav-icon" data-eva="shopping-bag-outline"></i>
-                <span class="menu-item" data-key="t-ecommerce">Ecommerce</span>
-                <span class="badge rounded-pill badge-soft-danger" data-key="t-hot">Hot</span>
+                <span class="menu-item" data-key="t-ecommerce">Posts</span>
+                <span class="badge rounded-pill badge-soft-danger" data-key="t-hot">{{ \App\Models\Post::count() }}</span>
             </a>
-        </li> --}}
+        </li>
         <li class="{{ Request::is('log*') ? 'mm-active' : '' }}">
             <a href="{{ route('log.index') }}">
                 <i class="icon nav-icon" data-eva="checkmark-square-outline"></i>

@@ -34,6 +34,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Log::class);
     }
+    
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function karyawan()
     {
