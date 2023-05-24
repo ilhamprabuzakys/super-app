@@ -22,6 +22,7 @@
         "laravolt/avatar": "^5.0",
         "mtownsend/response-xml": "^2.2",
         "php-mqtt/laravel-client": "^1.3",
+        "predis/predis": "^2.1",
         "pusher/pusher-php-server": "^7.2",
         "salmanzafar/laravel-mqtt": "^2.0",
         "tightenco/ziggy": "^1.5",

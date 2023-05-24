@@ -6,9 +6,10 @@ use App\Models\Log;
 use App\Models\Kota;
 use App\Models\User;
 use App\Models\Kecamatan;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\UsersJob;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -25,19 +26,13 @@ class UserController extends Controller
 
     public function index()
     {
-        static $count = 3;
-        $email = sprintf('%d.%s@makerindo.id', $count++, 'karyawan');
-        $username = explode('@', $email)[0];
-        return [
-            'name' => fake()->name(),
-            'email' => $email,
-            'username' => $username,
-            'password' => \bcrypt('password'), // password
-            'remember_token' => Str::random(10),
-            // 'email_verified_at' => now(),
-        ];
-        
-        $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        /* Job */
+        $job = new UsersJob();
+        $this->dispatch($job);
+        // $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        $users = Cache::remember('users', 10*60, function() {
+            return User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        });
         return view('users.list', [
             'title' => 'Users',
         ], compact('users'));

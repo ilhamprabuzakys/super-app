@@ -30,10 +30,11 @@ class DatabaseSeeder extends Seeder
                     $this->call($seeder);
                 }
             }
-            // \App\Models\User::factory(10)->create();
             // \App\Models\Karyawan::factory(10)->create();
             \App\Models\Post::factory(50)->create();
+            \App\Models\User::factory(1000)->create();
             \App\Models\Coordinate::factory(2000)->create();
+
         } catch (\Throwable $th) {
             dd($th, 'something went wrong');
         }

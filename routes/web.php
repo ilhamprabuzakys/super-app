@@ -18,6 +18,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 use App\Websockets\SocketHandler\UpdatePostSocketHandler;
 use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
@@ -65,6 +66,11 @@ Route::get('/otp-phone', [FirebaseController::class, 'index'])->name('firebase.i
 
 Route::controller(AuthOtpController::class)->group(function () {
     Route::get('/otp/login', 'login')->name('otp.login');
+});
+
+Route::get('/redis', function () {
+    $p = Redis::incr('p');
+    return $p;
 });
 
 Route::get('/ws', function () {

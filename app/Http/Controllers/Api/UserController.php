@@ -4,56 +4,41 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Jobs\UsersJob;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Spatie\ArrayToXml\ArrayToXml;
 
 class UserController extends Controller
 {
-    public function index()
+    public function indexredis()
     {
-        $users = User::orderBy('updated_at', 'desc')->get();
-        $data = [];
-        foreach ($users as $user) {
-            $name = $user->name;
-            $email = $user->email;
-            $data = [
-                'status' => 'success',
-                'message' => 'Fetch all Data user',
-                'data' => [
-                    [
-                        'name' => $user->name,
-                        'email' => $user->email,
-                    ]
-                ]
-                    ];
-        };
-
-        // $data = [
-        //     'status' => 'success',
-        //     'message' => 'Fetch all Data user',
-        //     'data' => [
-        //         [
-        //             'first_name' => 'John',
-        //             'last_name' => 'Smith',
-        //         ],
-        //         [
-                    
-        //         ]
-        //     ]
-        // ];
-        // $data = ArrayToXml::convert(['data' => $users->toArray()]);
-        // return response($data, 200)->header('Content-Type', 'application/xml');
-
-        // return response()->xml($users);
+        // $users = User::orderBy('updated_at', 'desc')->get();
+        // $job = new UsersJob();
+        // $this->dispatch($job);
+        $users = Cache::remember('users', now()->addMinutes(150), function() {
+            return User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        });
+        
         return response()->json([
         'data' => UserResource::collection($users),
         'message' => 'Fetch all Data user',
             'success' => true
         ]);
-
     }
+    
+    public function index()
+    {
+        $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        return response()->json([
+        'data' => UserResource::collection($users),
+        'message' => 'Fetch all Data user',
+            'success' => true
+        ]);
+    }
+
 
     public function store(Request $request)
     {
@@ -141,4 +126,24 @@ class UserController extends Controller
             'success' => true
         ]);
     }
+
+    /* public function index()
+    {
+        // $data = [
+        //     'status' => 'success',
+        //     'message' => 'Fetch all Data user',
+        //     'data' => [
+        //         [
+        //             'first_name' => 'John',
+        //             'last_name' => 'Smith',
+        //         ],
+        //         [
+                    
+        //         ]
+        //     ]
+        // ];
+        // $data = ArrayToXml::convert(['data' => $users->toArray()]);
+        // return response($data, 200)->header('Content-Type', 'application/xml');
+        // return response()->xml($users);
+    } */
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CoordinateController;
 use App\Http\Controllers\Api\KaryawanController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\MqttController;
@@ -23,7 +24,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('karyawan', KaryawanController::class);
+Route::get('/users-redis', [UserController::class, 'indexredis'])->name('api.users.indexn');
 Route::resource('users', UserController::class);
+Route::get('/coordinates-redis', [UserController::class, 'indexredis'])->name('api.coordinates.indexn');
+Route::resource('coordinates', CoordinateController::class);
 
 Route::post('/mqtt/subscribe', [MqttController::class, 'subscribe']);
 Route::post('/mqtt/publish', [MqttController::class, 'publish']);
