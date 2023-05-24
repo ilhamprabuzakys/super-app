@@ -25,7 +25,7 @@ class UserFactory extends Factory
         
         
         static $count = 3;
-        $email = sprintf('%d.%s@best-corporation.id', $count++, 'karyawan');
+        $email = sprintf('%d.%s@makerindo.id', $count++, 'karyawan');
         $username = explode('@', $email)[0];
         return [
             'name' => fake()->name(),

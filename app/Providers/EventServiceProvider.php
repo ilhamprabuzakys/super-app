@@ -28,8 +28,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $mqtt = MQTT::connection();
-        $mqtt->subscribe('chatapp2');
+        // $mqtt = MQTT::connection();
+        // $mqtt->subscribe('chatapp2');
         // MQTT::subscribe('chatapp', MqttMessageListener::class);
     }
 

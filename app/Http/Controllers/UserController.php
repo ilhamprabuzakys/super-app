@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kecamatan;
+use App\Models\Log;
 use App\Models\Kota;
 use App\Models\User;
-use App\Models\Log;
+use App\Models\Kecamatan;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -23,8 +25,19 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::orderBy('updated_at', 'desc')->get();
-        // $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
+        static $count = 3;
+        $email = sprintf('%d.%s@makerindo.id', $count++, 'karyawan');
+        $username = explode('@', $email)[0];
+        return [
+            'name' => fake()->name(),
+            'email' => $email,
+            'username' => $username,
+            'password' => \bcrypt('password'), // password
+            'remember_token' => Str::random(10),
+            // 'email_verified_at' => now(),
+        ];
+        
+        $users = User::with('posts.tags')->orderBy('updated_at', 'desc')->get();
         return view('users.list', [
             'title' => 'Users',
         ], compact('users'));

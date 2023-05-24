@@ -73,11 +73,11 @@ Route::get('/ws', function () {
 
 // WebSocketsRouter::webSocket('/socket/update-post', UpdatePostSocketHandler::class);
 
-Route::get('/publish', function () {
-    $message = 'Hi';
-    MQTT::publish('chatapp', 'Hllo');
-    return "Pesan MQTT dipublikasikan.";
-});
+// Route::get('/publish', function () {
+//     $message = 'Hi';
+//     MQTT::publish('chatapp', 'Hllo');
+//     return "Pesan MQTT dipublikasikan.";
+// });
 
-Route::post('/subscribe', [MqttController::class, 'subscribe']);
-Route::post('/publish', [MqttController::class, 'publish']);
+// Route::post('/subscribe', [MqttController::class, 'subscribe']);
+// Route::post('/publish', [MqttController::class, 'publish']);

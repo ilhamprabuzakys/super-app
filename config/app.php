@@ -187,6 +187,7 @@ return [
          */
         Laravel\Socialite\SocialiteServiceProvider::class,
         Salman\Mqtt\MqttServiceProvider::class,
+        Mtownsend\ResponseXml\Providers\ResponseXmlServiceProvider::class,
 
 
         /*
