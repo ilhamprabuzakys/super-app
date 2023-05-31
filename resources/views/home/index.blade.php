@@ -6,8 +6,8 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
-               <h1 data-wow-duration="1.2s" data-wow-delay="0.5s" class="line1 text-uppercase wow fadeInLeft">Makerindo</h1>
-               <h1 data-wow-duration="1.2s" data-wow-delay="0.5s" class="line2 text-uppercase wow fadeInLeft">Prima Solusi</h1>
+               <h1 data-wow-duration="1.2s" data-wow-delay="0.5s" class="line1 text-uppercase wow fadeInLeft">Inti Optima</h1>
+               <h1 data-wow-duration="1.2s" data-wow-delay="0.5s" class="line2 text-uppercase wow fadeInLeft">Teknologi</h1>
                <h6 data-wow-duration="1.5s" data-wow-delay="0.8s" class="text-uppercase wow fadeInLeft" style="font-weight: 500;">Build solution
                   without exception</h6>
             </div>
@@ -73,7 +73,7 @@
       <div class="container" data-aos="fade-up">
 
          <header class="section-header">
-            <h2 class="count">Makerindo in number</h2>
+            <h2 class="count">IOT in number</h2>
             <!-- <p class="text-align-start">Makerindo in number</p> -->
          </header>
 
@@ -224,7 +224,7 @@
 
          <header class="section-header loker">
             <h2 class="text-capitalize">Want to Make a Difference in the Tech World?</h2>
-            <h4 class="text-capitalize">Apply to join makerindo Tech Today</h4>
+            <h4 class="text-capitalize">Apply to join IoT Tech Today</h4>
          </header>
 
          <div class="row">

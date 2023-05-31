@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("title");
             $table->string("address");
             $table->string("short_address");
+            $table->string("email");
             $table->string("phone");
             $table->string("province");
             $table->string("description");

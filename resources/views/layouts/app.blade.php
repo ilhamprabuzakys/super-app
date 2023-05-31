@@ -14,19 +14,24 @@
    {{-- Box Icons Css --}}
    <link rel="stylesheet" href="{{ asset('assets/libs/box-icons/css/boxicons.min.css') }}">
    <!-- Bootstrap Css -->
-   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap-style"/>
+   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
    <!-- Icons Css -->
    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
    <!-- App Css-->
-   <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
+   <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css"/>
    @stack('style')
    @stack('head')
-   @vite('resources/css/app.css')
+   {{-- @vite('resources/css/app.css') --}}
 </head>
 
 
 <body data-sidebar="dark">
 
+   @php
+      $auth = cache()->remember('auth-user', 60*60*24, function() {
+         return auth()->user();
+      })
+   @endphp
    <!-- <body data-layout="horizontal"> -->
 
    <!-- Begin page -->
@@ -141,7 +146,7 @@
    @stack('scripts')
 
    <script src="{{ asset('assets/js/app.js') }}"></script>
-   @vite('resources/js/app.js')
+   {{-- @vite('resources/js/app.js') --}}
 
 </body>
 

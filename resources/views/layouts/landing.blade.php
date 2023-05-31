@@ -5,7 +5,7 @@
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   <title>Makerindo</title>
+   <title>{{ config('app.name') }}</title>
    <meta content="" name="description">
    <meta content="" name="keywords">
 
@@ -110,7 +110,7 @@
                      <p>
                         {!! str_replace(',', '<br>', $company->address) !!}<br>
                         <strong>Phone:</strong> {{ $company->phone }}<br>
-                        <strong>Email:</strong> makerido@gmail.com<br>
+                        <strong>Email:</strong> company@gmail.com<br>
                      </p>
 
                   </div>
